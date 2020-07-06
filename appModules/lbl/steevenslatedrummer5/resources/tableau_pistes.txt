@@ -11,9 +11,7 @@ Emplacement 1 :
 	Colonne Valeur Volume (OCR) diagonale (478, 185) (528, 205)
 	Colonne Potard Panoramique (Entrée) 548, 195
 	Colonne Valeur Panoramique (OCR) diagonale (568, 185) (618, 205)
-309, 392
 
-Premier élément du menu :
 Emplacement 2 :
 	Colonne Mute (couleur) 157, 225
 	Colonne Microphone (OCR) diagonale (172, 215) (307,235)
@@ -25,7 +23,6 @@ Emplacement 2 :
 	Colonne Potard Panoramique (Entrée) 548, 225
 	Colonne Valeur Panoramique (OCR) diagonale (568, 215) (618, 235)
 
-Premier emplacement du menu :
 Emplacement 3 :
 	Colonne Mute (couleur) 157, 255
 	Colonne Microphone (OCR) diagonale (172, 245) (307,265)

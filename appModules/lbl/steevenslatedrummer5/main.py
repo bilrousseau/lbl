@@ -224,9 +224,6 @@ class SteevenSlateDrummer(IAccessible):
 
     @script(gesture="kb:NVDA+d")
     def script_getColor(self, gesture):
-        color = LBLOCR.getColor([154, 222, 156, 224])
+        text = LBLOCR.getText([309, 215, 444,235])
 
-        if color == '#59caf5':
-            ui.message("Non muté")
-        elif color == '#143650':
-            ui.message("Muté")
+        ui.message(text)
