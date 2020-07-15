@@ -57,10 +57,6 @@ class NavObject:
         self.object = self.list[0]
 
     def getSubObject(self):
-        """
-            Recherche et mise en focus de l'enfant à la position indiquée par childIndex
-        """
-
         index = 0
         
         for it in self.object.items():
@@ -81,3 +77,12 @@ class NavObject:
         else:
             self.paramsPosition -= 1
         return self.getSubObject()
+
+    def goToObjectByName(self, name):
+        self.resetObject()
+
+        for o in self.list:
+            if o == name:
+                return self.getObject()
+            self.getNextObject()
+        return ""

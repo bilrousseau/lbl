@@ -1,9 +1,11 @@
 import tones
 from ..api.mouse import Mouse
 from ..api.ocr import LBLOCR
+import time
 
 mouse = Mouse()
-def setVolume(arrow):
+
+def setVolume(arrow, x = 0, y = 0):
     """
         Ajustement du volume de la pièce
     """
@@ -12,70 +14,55 @@ def setVolume(arrow):
         mouse.moveAndScrole(332, 77, 50)
     elif arrow == "left":
         mouse.moveAndScrole(332, 77, -50)
-    volume = LBLOCR.getText([365, 47, 425, 87])
-    volume = volume[7:].replace(' ', '')
-    return volume
+    mouse.moveAndLeftClick(x, y)
 
-def setVelocity(arrow):
+def setAttack(arrow, x, y):
     """
-        Ajustement de la vélocité de la grosse caisse
-    """
-
-    if arrow == "right":
-        mouse.moveAndScrole(768, 68, 34)
-    elif arrow == "left":
-        mouse.moveAndScrole(768, 68, -34)
-    velocity = LBLOCR.getText([788, 43, 848, 78])
-    velocity = velocity.replace(' ', '')
-    velocity = velocity[9:]
-    return velocity
-
-def setAttack(arrow):
-    """
-        Ajustement de l'attaque de la grosse caisse
+        Ajustement de l'attaque de la pièce
     """
 
     if arrow == "right":
         mouse.moveAndScrole(700, 188, 34)
     elif arrow == "left":
         mouse.moveAndScrole(700, 188, -34)
-    attack = LBLOCR.getText([690, 207, 740, 222])
+    mouse.moveAndLeftClick(x, y)
     return attack
 
-def setDecay(arrow):
+def setDecay(arrow, x, y):
     """
-        Ajustement du decay de la grosse caisse
-    """
-
-    if arrow == "right":
-        tones.beep(880, 10)
-    elif arrow == "left":
-        tones.beep(440, 10)
-    return "0"
-
-def setSustain(arrow):
-    """
-        Ajustement du sustain de la grosse caisse
+        Ajustement du decay de la pièce
     """
 
     if arrow == "right":
-        tones.beep(880, 10)
+        mouse.moveAndScrole(760, 188, 34)
     elif arrow == "left":
-        tones.beep(440, 10)
-    return "0"
+        mouse.moveAndScrole(760, 188, -34)
+    mouse.moveAndLeftClick(x, y)
+    return decay
 
-def setRelease(arrow):
+def setSustain(arrow, x, y):
     """
-        Ajustement du release de la grosse caisse
+        Ajustement du sustain de la pièce
     """
 
     if arrow == "right":
-        tones.beep(880, 10)
+        mouse.moveAndScrole(830, 188, 34)
     elif arrow == "left":
-        tones.beep(440, 10)
-    return "0"
+        mouse.moveAndScrole(830, 188, -34)
+    mouse.moveAndLeftClick(x, y)
+    return sustain
 
+def setRelease(arrow, x, y):
+    """
+        Ajustement du release de la pièce
+    """
 
+    if arrow == "right":
+        mouse.moveAndScrole(890, 188, 34)
+    elif arrow == "left":
+        mouse.moveAndScrole(890, 188, -34)
+    mouse.moveAndLeftClick(x, y)
+    return release
 
 # Dictionnaire regroupant les paramètres de la grosse caisse
 kickParams = {
@@ -83,7 +70,6 @@ kickParams = {
     "x": (514),
     "y": 535,
     "volume": setVolume,
-    "velocity": setVelocity,
     "attack": setAttack,
     "decay": setDecay,
     "sustain": setSustain,
@@ -96,7 +82,6 @@ snareParams = {
     "x": 418,
     "y": 494,
     "volume": setVolume,
-    "velocity": setVelocity,
     "attack": setAttack,
     "decay": setDecay,
     "sustain": setSustain,
@@ -109,7 +94,6 @@ tom1Params = {
     "x": 437,
     "y": 433,
     "volume": setVolume,
-    "velocity": setVelocity,
     "attack": setAttack,
     "decay": setDecay,
     "sustain": setSustain,
@@ -122,7 +106,6 @@ tom2Params = {
     "x": 498,
     "y": 423,
     "volume": setVolume,
-    "velocity": setVelocity,
     "attack": setAttack,
     "decay": setDecay,
     "sustain": setSustain,
@@ -135,7 +118,6 @@ tom3Params = {
     "x": 608,
     "y": 491,
     "volume": setVolume,
-    "velocity": setVelocity,
     "attack": setAttack,
     "decay": setDecay,
     "sustain": setSustain,
@@ -148,7 +130,6 @@ tom4Params = {
     "x": 658,
     "y": 538,
     "volume": setVolume,
-    "velocity": setVelocity,
     "attack": setAttack,
     "decay": setDecay,
     "sustain": setSustain,
@@ -161,7 +142,6 @@ hihatParams = {
     "x": 360,
     "y": 476,
     "volume": setVolume,
-    "velocity": setVelocity,
     "attack": setAttack,
     "decay": setDecay,
     "sustain": setSustain,
@@ -174,7 +154,6 @@ cymbal1Params = {
     "x": 438,
     "y": 374,
     "volume": setVolume,
-    "velocity": setVelocity,
     "attack": setAttack,
     "decay": setDecay,
     "sustain": setSustain,
@@ -187,7 +166,6 @@ cymbal2Params = {
     "x": 663,
     "y": 381,
     "volume": setVolume,
-    "velocity": setVelocity,
     "attack": setAttack,
     "decay": setDecay,
     "sustain": setSustain,
@@ -200,7 +178,6 @@ cymbal3Params = {
     "x": 383,
     "y": 414,
     "volume": setVolume,
-    "velocity": setVelocity,
     "attack": setAttack,
     "decay": setDecay,
     "sustain": setSustain,
@@ -213,7 +190,6 @@ cymbal4Params = {
     "x": 583,
     "y": 423,
     "volume": setVolume,
-    "velocity": setVelocity,
     "attack": setAttack,
     "decay": setDecay,
     "sustain": setSustain,
@@ -226,7 +202,6 @@ cymbal5Params = {
     "x": 717,
     "y": 457,
     "volume": setVolume,
-    "velocity": setVelocity,
     "attack": setAttack,
     "decay": setDecay,
     "sustain": setSustain,

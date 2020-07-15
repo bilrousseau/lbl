@@ -52,6 +52,14 @@ class LBLOCR:
         img = ImageGrab.grab(bbox=(winLeft + diagonal[0], winTop + diagonal[1], winLeft + diagonal[2], winTop + diagonal[3]))
         return LBLOCR.rgb2hex(img.getpixel((colorX, colorY)))
 
+    def getCorrection(world, list):
+        world = world.replace(' ', '').replace('\n', '').lower()
+
+        for l in list:
+            if world in l["list"]:
+                return l["correction"]
+        return world
+
     def getWindow():
         obj = api.getFocusObject()
         winLeft = obj.location[0]
