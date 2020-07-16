@@ -41,7 +41,7 @@ def getSelectedFXName():
 
 def getSmartName():
     """
-        On retourne un nom intelligible pour l'effet courant, s'il est pris en charge par LBL
+        On vérifie que le plugin est pris en charge par LBL, et si tel est le cas, on retourne son nom de manière intelligible
     """
 
     window = api.getForegroundObject()
@@ -51,4 +51,8 @@ def getSmartName():
         return "Steeven Slate Drummer 5"
     elif fxName.startswith("VSTi: DSK Saxophones"):
         return "DSK Saxophones"
+    elif fxName.startswith("VSTi: EZdrummer"):
+        return "IZI Drummer"
+    elif fxName.startswith("VST: GTune"):
+        return "GTune"
     return
