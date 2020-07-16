@@ -5,7 +5,7 @@ import controlTypes
 
 def isFXWindow():
     """
-    On vérifie que la fenêtre courante est la fenêtre d'effets
+        On vérifie que la fenêtre courante est la fenêtre d'effets
     """
     
     if api.getForegroundObject().name.startswith('FX:'):
@@ -55,4 +55,6 @@ def getSmartName():
         return "IZI Drummer"
     elif fxName.startswith("VST: GTune"):
         return "GTune"
+    elif fxName.startswith("VST3i: sforzando"):
+        return "Sforzando"
     return

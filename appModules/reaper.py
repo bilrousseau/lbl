@@ -8,9 +8,11 @@ from .lbl.reaper import base, label
 from .lbl.reaper.overlay import LBLCheckBox
 from .lbl.steevenslatedrummer5.main import SteevenSlateDrummer
 from .lbl.dsksaxophones.main import DSKSaxophones
+
+# Import des modules Sibiac
 from .sibiac.ezdrummer import EZDrummer
 from .sibiac.gtune import GTune
-
+from .sibiac.sforzando import Sforzando
 
 class AppModule(appModuleHandler.AppModule):
     tones.beep(440, 150)
@@ -38,5 +40,7 @@ class AppModule(appModuleHandler.AppModule):
             clsList.insert(0, EZDrummer)
         elif obj.windowClassName.startswith("GWin") and base.getSelectedFXName().startswith("VST: GTune"):
             clsList.insert(0, GTune)
+        elif obj.windowClassName.startswith("Plugin") and base.getSelectedFXName().startswith("VST3i: sforzando"):
+            clsList.insert(0, Sforzando)
 
 
