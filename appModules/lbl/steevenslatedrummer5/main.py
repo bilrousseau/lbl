@@ -131,7 +131,10 @@ class SteevenSlateDrummer(IAccessible):
 
         if zone == "Content":
             if tab["name"] == "Drum":
-                if self.mode == "piece_settings":
+                if self.mode == "default":
+                    self.mode = "piece_settings"
+                    ui.message(self.drumObject.getObject()["name"] + "Configuration, " + self.drumObject.getSubObject()[0])
+                elif self.mode == "piece_settings":
                     ui.message(self.drumObject.getNextSubObject()[0])
             elif tab["name"] == "Mixer":
                 if self.mode == "menu":
@@ -201,15 +204,13 @@ class SteevenSlateDrummer(IAccessible):
         if zone == "Content":
             if tab["name"] == "Drum":
                 if self.mode == "default":
-                    self.mode = "piece_settings"
-                    ui.message(self.drumObject.getObject()["name"] + "Configuration, " + self.drumObject.getSubObject()[0])
+                    self.drumObject.getObject(mouse = "move_and_click")["name"]
                 elif self.mode == "piece_settings":
                     ui.message(self.drumObject.getObject()["name"] + " configuration saved")
                     self.mode = "default"
             elif tab["name"] == "Mixer":
                 if self.mode == "default":
-                    self.mode = "menu"
-                    ui.message(obj["routing"]("enter", obj["routingButtonX"], obj["routingButtonY"], obj["routingDiagonal"], obj["menuSize"]))
+                    self.mixerObject.getObject(mouse = "move_and_click")["name"]
                 elif self.mode == "menu":
                     ui.message("Routing saved")
                     keyboardHandler.KeyboardInputGesture.fromName("enter").send()
@@ -237,6 +238,7 @@ class SteevenSlateDrummer(IAccessible):
             ui.message("Cancel")
             keyboardHandler.KeyboardInputGesture.fromName("escape").send()
             self.mode = "default"
+
     @script(gesture="kb:h")
     def script_getHelp(self, gesture):
         zone = self.zone.getObject()
@@ -254,3 +256,15 @@ class SteevenSlateDrummer(IAccessible):
             ui.message("Non muté")
         elif color == '#143650':
             ui.message("Muté")
+
+    @script(gesture="kb:applications")
+    def script_applicationMenu(self, gesture):
+        tab = self.tab.getObject()
+        zone = self.zone.getObject()
+        obj = self.mixerObject.getObject()
+
+        if zone == "Content":
+            if tab["name"] == "Mixer":
+                if self.mode == "default":
+                    self.mode = "menu"
+                    ui.message(obj["routing"]("enter", obj["routingButtonX"], obj["routingButtonY"], obj["routingDiagonal"], obj["menuSize"]))

@@ -90,7 +90,272 @@ kickOutParams = {
     "routing": setRouting
 }
 
+snareTopParams = {
+    "name": "Snare Top",
+    "x": 418,
+    "y": 494,
+    "stateDiagonal": [],
+    "volumeX": 458,
+    "volumeY": 195,
+    "volumeDiagonal": [478, 185, 528, 205],
+    "panoramicX": 548,
+    "panoramicY": 195,
+    "panoramicDiagonal": [568, 185, 618, 205],
+    "routingButtonX": 420,
+    "routingButtonY": 195,
+    "routingDiagonal": [309, 185, 444, 205],
+    "menuSize": 32,
+    "volume": setVolume,
+    "panoramic": setPanoramic,
+    "state": setState,
+    "routing": setRouting
+}
+
+snareBottomParams = {
+    "name": "Snare Bottom",
+    "x": 418,
+    "y": 494,
+    "stateDiagonal": [],
+    "volumeX": 458,
+    "volumeY": 225,
+    "volumeDiagonal": [478, 215, 528, 235],
+    "panoramicX": 548,
+    "panoramicY": 235,
+    "panoramicDiagonal": [568, 215, 618, 235],
+    "routingButtonX": 420,
+    "routingButtonY": 225,
+    "routingDiagonal": [309, 215, 444, 235],
+    "menuSize": 32,
+    "volume": setVolume,
+    "panoramic": setPanoramic,
+    "state": setState,
+    "routing": setRouting
+}
+
+tom1Params = {
+    "name": "Tom 1",
+    "x": 437,
+    "y": 433,
+    "stateDiagonal": [],
+    "stateDiagonal": [],
+    "volumeX": 458,
+    "volumeY": 195,
+    "volumeDiagonal": [478, 185, 528, 205],
+    "panoramicX": 548,
+    "panoramicY": 195,
+    "panoramicDiagonal": [568, 185, 618, 205],
+    "routingButtonX": 420,
+    "routingButtonY": 195,
+    "routingDiagonal": [309, 185, 444, 205],
+    "menuSize": 32,
+    "volume": setVolume,
+    "panoramic": setPanoramic,
+    "state": setState,
+    "routing": setRouting
+}
+
+tom2Params = {
+    "name": "Tom 2",
+    "x": 498,
+    "y": 423,
+    "stateDiagonal": [],
+    "volumeX": 458,
+    "volumeY": 195,
+    "volumeDiagonal": [478, 185, 528, 205],
+    "panoramicX": 548,
+    "panoramicY": 195,
+    "panoramicDiagonal": [568, 185, 618, 205],
+    "routingButtonX": 420,
+    "routingButtonY": 195,
+    "routingDiagonal": [309, 185, 444, 205],
+    "menuSize": 32,
+    "volume": setVolume,
+    "panoramic": setPanoramic,
+    "state": setState,
+    "routing": setRouting
+}
+
+tom3Params = {
+    "name": "Tom 3",
+    "x": 608,
+    "y": 491,
+    "stateDiagonal": [],
+    "volumeX": 458,
+    "volumeY": 195,
+    "volumeDiagonal": [478, 185, 528, 205],
+    "panoramicX": 548,
+    "panoramicY": 195,
+    "panoramicDiagonal": [568, 185, 618, 205],
+    "routingButtonX": 420,
+    "routingButtonY": 195,
+    "routingDiagonal": [309, 185, 444, 205],
+    "menuSize": 32,
+    "volume": setVolume,
+    "panoramic": setPanoramic,
+    "state": setState,
+    "routing": setRouting
+}
+
+tom4Params = {
+    "name": "Tom 4",
+    "x": 658,
+    "y": 538,
+    "stateDiagonal": [],
+    "volumeX": 458,
+    "volumeY": 195,
+    "volumeDiagonal": [478, 185, 528, 205],
+    "panoramicX": 548,
+    "panoramicY": 195,
+    "panoramicDiagonal": [568, 185, 618, 205],
+    "routingButtonX": 420,
+    "routingButtonY": 195,
+    "routingDiagonal": [309, 185, 444, 205],
+    "menuSize": 32,
+    "volume": setVolume,
+    "panoramic": setPanoramic,
+    "state": setState,
+    "routing": setRouting
+}
+
+hihatParams = {
+    "name": "Hi-Hat",
+    "x": 360,
+    "y": 476,
+    "stateDiagonal": [],
+    "volumeX": 458,
+    "volumeY": 195,
+    "volumeDiagonal": [478, 185, 528, 205],
+    "panoramicX": 548,
+    "panoramicY": 195,
+    "panoramicDiagonal": [568, 185, 618, 205],
+    "routingButtonX": 420,
+    "routingButtonY": 195,
+    "routingDiagonal": [309, 185, 444, 205],
+    "menuSize": 32,
+    "volume": setVolume,
+    "panoramic": setPanoramic,
+    "state": setState,
+    "routing": setRouting
+}
+
+cymbal1Params = {
+    "name": "Cymbal 1",
+    "x": 438,
+    "y": 374,
+    "stateDiagonal": [],
+    "volumeX": 458,
+    "volumeY": 195,
+    "volumeDiagonal": [478, 185, 528, 205],
+    "panoramicX": 548,
+    "panoramicY": 195,
+    "panoramicDiagonal": [568, 185, 618, 205],
+    "routingButtonX": 420,
+    "routingButtonY": 195,
+    "routingDiagonal": [309, 185, 444, 205],
+    "menuSize": 36,
+    "volume": setVolume,
+    "panoramic": setPanoramic,
+    "state": setState,
+    "routing": setRouting
+}
+
+cymbal2Params = {
+    "name": "Cymbal 2",
+    "x": 663,
+    "y": 381,
+    "stateDiagonal": [],
+    "volumeX": 458,
+    "volumeY": 195,
+    "volumeDiagonal": [478, 185, 528, 205],
+    "panoramicX": 548,
+    "panoramicY": 195,
+    "panoramicDiagonal": [568, 185, 618, 205],
+    "routingButtonX": 420,
+    "routingButtonY": 195,
+    "routingDiagonal": [309, 185, 444, 205],
+    "menuSize": 36,
+    "volume": setVolume,
+    "panoramic": setPanoramic,
+    "state": setState,
+    "routing": setRouting
+}
+
+cymbal3Params = {
+    "name": "Cymbal 3",
+    "x": 383,
+    "y": 414,
+    "stateDiagonal": [],
+    "volumeX": 458,
+    "volumeY": 195,
+    "volumeDiagonal": [478, 185, 528, 205],
+    "panoramicX": 548,
+    "panoramicY": 195,
+    "panoramicDiagonal": [568, 185, 618, 205],
+    "routingButtonX": 420,
+    "routingButtonY": 195,
+    "routingDiagonal": [309, 185, 444, 205],
+    "menuSize": 36,
+    "volume": setVolume,
+    "panoramic": setPanoramic,
+    "state": setState,
+    "routing": setRouting
+}
+
+cymbal4Params = {
+    "name": "Ride",
+    "x": 583,
+    "y": 423,
+    "stateDiagonal": [],
+    "volumeX": 458,
+    "volumeY": 195,
+    "volumeDiagonal": [478, 185, 528, 205],
+    "panoramicX": 548,
+    "panoramicY": 195,
+    "panoramicDiagonal": [568, 185, 618, 205],
+    "routingButtonX": 420,
+    "routingButtonY": 195,
+    "routingDiagonal": [309, 185, 444, 205],
+    "menuSize": 32,
+    "volume": setVolume,
+    "panoramic": setPanoramic,
+    "state": setState,
+    "routing": setRouting
+}
+
+cymbal5Params = {
+    "name": "Cymbal 5",
+    "x": 717,
+    "y": 457,
+    "stateDiagonal": [],
+    "volumeX": 458,
+    "volumeY": 195,
+    "volumeDiagonal": [478, 185, 528, 205],
+    "panoramicX": 548,
+    "panoramicY": 195,
+    "panoramicDiagonal": [568, 185, 618, 205],
+    "routingButtonX": 420,
+    "routingButtonY": 195,
+    "routingDiagonal": [309, 185, 444, 205],
+    "menuSize": 36,
+    "volume": setVolume,
+    "panoramic": setPanoramic,
+    "state": setState,
+    "routing": setRouting
+}
+
 mixerObject = [
     kickInParams,
-    kickOutParams
+    kickOutParams,
+    snareTopParams,
+    snareBottomParams,
+    tom1Params,
+    tom2Params,
+    tom3Params,
+    tom4Params,
+    hihatParams,
+    cymbal1Params,
+    cymbal2Params,
+    cymbal3Params,
+    cymbal4Params,
+    cymbal5Params
 ]

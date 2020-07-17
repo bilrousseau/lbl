@@ -186,7 +186,7 @@ cymbal3Params = {
 
 # Dictionnaire regroupant les paramètres de la cimbale 4
 cymbal4Params = {
-    "name": "Cymbale 4",
+    "name": "Ride",
     "x": 583,
     "y": 423,
     "volume": setVolume,

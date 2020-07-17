@@ -31,5 +31,9 @@ routingMenu36 = [
     "Out 30 Mono",
     "Out 31 Mono",
     "Out 32 Mono",
+    "OverHead",
+    "Room",
+    "Room B",
+    "SLR"
 ]
     
