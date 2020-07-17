@@ -40,7 +40,8 @@ class SteevenSlateDrummer(IAccessible):
             Définition du comportement de la touche tab, selon la zone
         """
 
-        ui.message(self.zone.getNextObject())
+        if self.mode == "default":
+            ui.message(self.zone.getNextObject())
        
     @script(gesture="kb:shift+tab")
     def script_goToPreviousZone(self, gesture):
@@ -136,7 +137,7 @@ class SteevenSlateDrummer(IAccessible):
                     ui.message(obj["routing"]("down", menuSize = obj["menuSize"]))
                     keyboardHandler.KeyboardInputGesture.fromName("downarrow").send()
 
-    @script(gesture="kb:alt+uparrow")
+    @script(gesture="kb:shift+uparrow")
     def script_volumeUp(self, gesture):
         zone = self.zone.getObject()
         tab = self.tab.getObject()
@@ -144,9 +145,9 @@ class SteevenSlateDrummer(IAccessible):
 
         if zone == "Content":
             if tab["name"] == "Mixer":
-                ui.message(obj["volume"]("up", obj["x"], obj["y"]))
+                obj["volume"]("up", obj["volumeX"], obj["volumeY"], obj["x"], obj["y"])
 
-    @script(gesture="kb:alt+downarrow")
+    @script(gesture="kb:shift+downarrow")
     def script_volumeDown(self, gesture):
         zone = self.zone.getObject()
         tab = self.tab.getObject()
@@ -154,9 +155,9 @@ class SteevenSlateDrummer(IAccessible):
         
         if zone == "Content":
             if tab["name"] == "Mixer":
-                ui.message(obj["volume"]("down", obj["x"], obj["y"]))
+                obj["volume"]("down", obj["volumeX"], obj["volumeY"], obj["x"], obj["y"])
 
-    @script(gesture="kb:alt+leftarrow")
+    @script(gesture="kb:shift+leftarrow")
     def script_panoramicLeft(self, gesture):
         zone = self.zone.getObject()
         tab = self.tab.getObject()
@@ -164,9 +165,9 @@ class SteevenSlateDrummer(IAccessible):
 
         if zone == "Content":
             if tab["name"] == "Mixer":
-                ui.message(obj["panoramic"]("left"))
+                obj["panoramic"]("left", obj["panoramicX"], obj["panoramicY"], obj["x"], obj["y"])
 
-    @script(gesture="kb:alt+rightarrow")
+    @script(gesture="kb:shift+rightarrow")
     def script_panoramicRight(self, gesture):
         zone = self.zone.getObject()
         tab = self.tab.getObject()
@@ -174,7 +175,7 @@ class SteevenSlateDrummer(IAccessible):
 
         if zone == "Content":
             if tab["name"] == "Mixer":
-                ui.message(obj["panoramic"]("right"))
+                obj["panoramic"]("right", obj["panoramicX"], obj["panoramicY"], obj["x"], obj["y"])
 
     @script(gesture="kb:m")
     def script_changeState(self, gesture):
@@ -198,8 +199,12 @@ class SteevenSlateDrummer(IAccessible):
 
         if zone == "Content":
             if tab["name"] == "Drum":
-                self.mode = "piece_settings"
-                ui.message(self.drumObject.getObject()["name"] + "Configuration, " + self.drumObject.getSubObject()[0])
+                if self.mode == "default":
+                    self.mode = "piece_settings"
+                    ui.message(self.drumObject.getObject()["name"] + "Configuration, " + self.drumObject.getSubObject()[0])
+                elif self.mode == "piece_settings":
+                    ui.message(self.drumObject.getObject()["name"] + " configuration saved")
+                    self.mode = "default"
             elif tab["name"] == "Mixer":
                 if self.mode == "default":
                     self.mode = "menu"
@@ -228,7 +233,7 @@ class SteevenSlateDrummer(IAccessible):
             ui.message(self.drumObject.getObject()["name"] + " configuration saved")
             self.mode = "default"
         elif self.mode == "menu":
-            ui.message("Routing saved")
+            ui.message("Cancel")
             keyboardHandler.KeyboardInputGesture.fromName("escape").send()
             self.mode = "default"
 

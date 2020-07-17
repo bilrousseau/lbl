@@ -67,7 +67,7 @@ def setRelease(arrow, x, y):
 # Dictionnaire regroupant les paramètres de la grosse caisse
 kickParams = {
     "name": "Kick",
-    "x": (514),
+    "x": 514,
     "y": 535,
     "volume": setVolume,
     "attack": setAttack,

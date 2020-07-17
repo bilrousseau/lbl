@@ -1,3 +1,4 @@
+import time
 import tones
 import ui
 from ..api.mouse import Mouse
@@ -11,19 +12,21 @@ mouse = Mouse()
 menu32 = NavObject(routingMenu32)
 menu36 = NavObject(routingMenu36)
 
-def setVolume(key = None, x = 0, y = 0):
+def setVolume(key = None, volumeX = 0, volumeY = 0, pieceX = 0, pieceY = 0):
     if key == "up":
-        mouse.moveAndScrole(x, y, 10)
-        return "Plus fort"
+        mouse.moveAndScrole(volumeX, volumeY, 20)
+        mouse.moveAndLeftClick(pieceX, pieceY)
     elif key == "down":
-        mouse.moveAndScrole(x, y, -10)
-        return "Moins fort"
+        mouse.moveAndScrole(volumeX, volumeY, -20)
+        mouse.moveAndLeftClick(pieceX, pieceY)
 
-def setPanoramic(key = None, x = 0, y = 0):
+def setPanoramic(key = None, panoramicX = 0, panoramicY = 0, pieceX = 0, pieceY = 0):
     if key == "left":
-        return "Plus à gauche"
+        mouse.moveAndScrole(panoramicX, panoramicY, -20)
+        mouse.moveAndLeftClick(pieceX, pieceY)
     elif key == "right":
-        return "Plus à droite"
+        mouse.moveAndScrole(panoramicX, panoramicY, 20)
+        mouse.moveAndLeftClick(pieceX, pieceY)
 
 def setState(diagonal = []):
     return "Changement de l'état muté, ou non muté"
