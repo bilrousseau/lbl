@@ -16,7 +16,7 @@ from ..api.navobject import NavObject
 from ..api.ocr import LBLOCR
 from ..api.menu import Menu
 
-# Import des modules propres à l'application
+# Import des modules propres à Steeven Slate Drummer 5
 from .zonelist import zoneList
 from .tablist import tabList
 from .createcontent import createContent
@@ -31,7 +31,7 @@ class SteevenSlateDrummer(IAccessible):
     createContent = NavObject(createContent)
     drumObject = NavObject(drumObject, 3)
     mixerObject = NavObject(mixerObject, 0)
-    menu = Menu()
+    # menu = Menu()
     mode = "default"
 
     @script(gesture="kb:tab")
@@ -49,7 +49,8 @@ class SteevenSlateDrummer(IAccessible):
             Définition du comportement des touches shift+tab, selon la zone
         """
 
-        ui.message(self.zone.getPreviousObject())
+        if self.mode == "default":
+            ui.message(self.zone.getPreviousObject())
 
     @script(gesture="kb:rightarrow")
     def script_goToNextItem(self, gesture):
@@ -236,6 +237,14 @@ class SteevenSlateDrummer(IAccessible):
             ui.message("Cancel")
             keyboardHandler.KeyboardInputGesture.fromName("escape").send()
             self.mode = "default"
+    @script(gesture="kb:h")
+    def script_getHelp(self, gesture):
+        zone = self.zone.getObject()
+
+        if zone == "Tabs":
+            ui.message("Vous êtes dans la zone contenant la liste des onglets.")
+        elif zone == "Content":
+            ui.message("Vous êtes dans la zone de contenu")
 
     @script(gesture="kb:NVDA+d")
     def script_getColor(self, gesture):
