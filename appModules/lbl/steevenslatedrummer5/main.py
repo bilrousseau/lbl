@@ -189,7 +189,8 @@ class SteevenSlateDrummer(IAccessible):
 
         if zone == "Content":
             if tab["name"] == "Mixer":
-                ui.message(obj["state"](obj["stateDiagonal"]))
+                tones.beep(440, 40)
+                obj["state"](obj["stateDiagonal"])
 
     @script(gesture="kb:enter")
     def script_getTab(self, gesture):

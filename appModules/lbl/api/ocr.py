@@ -43,7 +43,7 @@ class LBLOCR:
 
         return open(ocrFile).read()
 
-    def getColor(diagonal = [] , colorX = 1, colorY = 1):
+    def getColor(diagonal = [], colorX = 1, colorY = 1):
         obj = api.getFocusObject()
         winLeft = obj.location[0]
         winTop = obj.location[1]
