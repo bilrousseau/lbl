@@ -29,7 +29,14 @@ def setPanoramic(key = None, panoramicX = 0, panoramicY = 0, pieceX = 0, pieceY 
         mouse.moveAndLeftClick(pieceX, pieceY)
 
 def setState(diagonal = []):
-    return "Changement de l'état muté, ou non muté"
+    color = LBLOCR.getColor(diagonal)
+
+    if color == "#59caf5":
+        state = "Muté"
+    elif color == "#143650":
+        state = "Non muté"
+    mouse.moveAndLeftClick(diagonal[0], diagonal[1])
+    return state
 
 def setRouting(key = None, routingButtonX = 0, routingButtonY = 0, ocrDiagonal = [], menuSize = 0):
     if menuSize == 32:

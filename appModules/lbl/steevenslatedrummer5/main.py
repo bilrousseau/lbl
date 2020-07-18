@@ -189,7 +189,7 @@ class SteevenSlateDrummer(IAccessible):
 
         if zone == "Content":
             if tab["name"] == "Mixer":
-                ui.message(obj["state"]())
+                ui.message(obj["state"](obj["stateDiagonal"]))
 
     @script(gesture="kb:enter")
     def script_getTab(self, gesture):
@@ -247,15 +247,6 @@ class SteevenSlateDrummer(IAccessible):
             ui.message("Vous êtes dans la zone contenant la liste des onglets.")
         elif zone == "Content":
             ui.message("Vous êtes dans la zone de contenu")
-
-    @script(gesture="kb:NVDA+d")
-    def script_getColor(self, gesture):
-        color = LBLOCR.getColor([154, 222, 156, 224])
-
-        if color == '#59caf5':
-            ui.message("Non muté")
-        elif color == '#143650':
-            ui.message("Muté")
 
     @script(gesture="kb:applications")
     def script_applicationMenu(self, gesture):
