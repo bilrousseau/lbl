@@ -16,9 +16,9 @@ def setVolume(arrow, x = 0, y = 0):
         mouse.moveAndScrole(332, 77, -50)
     mouse.moveAndLeftClick(x, y)
 
-def setAttack(arrow, x, y):
+def setPresence(arrow, x, y):
     """
-        Ajustement de l'attaque de la pièce
+        Ajustement de la présence de la pièce
     """
 
     if arrow == "right":
@@ -26,43 +26,18 @@ def setAttack(arrow, x, y):
     elif arrow == "left":
         mouse.moveAndScrole(700, 188, -34)
     mouse.moveAndLeftClick(x, y)
-    return attack
 
-def setDecay(arrow, x, y):
+def setTune(arrow, x = 0, y = 0):
     """
-        Ajustement du decay de la pièce
-    """
-
-    if arrow == "right":
-        mouse.moveAndScrole(760, 188, 34)
-    elif arrow == "left":
-        mouse.moveAndScrole(760, 188, -34)
-    mouse.moveAndLeftClick(x, y)
-    return decay
-
-def setSustain(arrow, x, y):
-    """
-        Ajustement du sustain de la pièce
+        Ajustement de l'accord de la pièce
     """
 
     if arrow == "right":
-        mouse.moveAndScrole(830, 188, 34)
+        mouse.moveAndScrole(332, 110, 50)
     elif arrow == "left":
-        mouse.moveAndScrole(830, 188, -34)
+        mouse.moveAndScrole(332, 110, -50)
     mouse.moveAndLeftClick(x, y)
-    return sustain
 
-def setRelease(arrow, x, y):
-    """
-        Ajustement du release de la pièce
-    """
-
-    if arrow == "right":
-        mouse.moveAndScrole(890, 188, 34)
-    elif arrow == "left":
-        mouse.moveAndScrole(890, 188, -34)
-    mouse.moveAndLeftClick(x, y)
-    return release
 
 # Dictionnaire regroupant les paramètres de la grosse caisse
 kickParams = {
@@ -70,10 +45,8 @@ kickParams = {
     "x": 514,
     "y": 535,
     "volume": setVolume,
-    "attack": setAttack,
-    "decay": setDecay,
-    "sustain": setSustain,
-    "release": setRelease,
+    "presence": setPresence,
+    "tune": setTune,
 }
 
 # Dictionnaire regroupant les paramètres de la caisse claire
@@ -82,22 +55,18 @@ snareParams = {
     "x": 418,
     "y": 494,
     "volume": setVolume,
-    "attack": setAttack,
-    "decay": setDecay,
-    "sustain": setSustain,
-    "release": setRelease,
+    "presence": setPresence,
+    "tune": setTune,
 }
-
+  
 # Dictionnaire regroupant les paramètres du tom 1
 tom1Params = {
     "name": "Tom 1",
     "x": 437,
     "y": 433,
     "volume": setVolume,
-    "attack": setAttack,
-    "decay": setDecay,
-    "sustain": setSustain,
-    "release": setRelease,
+    "presence": setPresence,
+    "tune": setTune,
 }
 
 # Dictionnaire regroupant les paramètres du tom 2
@@ -106,10 +75,8 @@ tom2Params = {
     "x": 498,
     "y": 423,
     "volume": setVolume,
-    "attack": setAttack,
-    "decay": setDecay,
-    "sustain": setSustain,
-    "release": setRelease,
+    "presence": setPresence,
+    "tune": setTune,
 }
 
 # Dictionnaire regroupant les paramètres du tom 3
@@ -118,10 +85,8 @@ tom3Params = {
     "x": 608,
     "y": 491,
     "volume": setVolume,
-    "attack": setAttack,
-    "decay": setDecay,
-    "sustain": setSustain,
-    "release": setRelease,
+    "presence": setPresence,
+    "tune": setTune,
 }
 
 # Dictionnaire regroupant les paramètres du tom 4
@@ -130,10 +95,8 @@ tom4Params = {
     "x": 658,
     "y": 538,
     "volume": setVolume,
-    "attack": setAttack,
-    "decay": setDecay,
-    "sustain": setSustain,
-    "release": setRelease,
+    "presence": setPresence,
+    "tune": setTune,
 }
 
 # Dictionnaire regroupant les paramètres du charley
@@ -142,10 +105,8 @@ hihatParams = {
     "x": 360,
     "y": 476,
     "volume": setVolume,
-    "attack": setAttack,
-    "decay": setDecay,
-    "sustain": setSustain,
-    "release": setRelease,
+    "presence": setPresence,
+    "tune": setTune,
 }
 
 # Dictionnaire regroupant les paramètres de la cimbale 1
@@ -154,10 +115,8 @@ cymbal1Params = {
     "x": 438,
     "y": 374,
     "volume": setVolume,
-    "attack": setAttack,
-    "decay": setDecay,
-    "sustain": setSustain,
-    "release": setRelease,
+    "presence": setPresence,
+    "tune": setTune,
 }
 
 # Dictionnaire regroupant les paramètres de la cimbale 2
@@ -166,10 +125,8 @@ cymbal2Params = {
     "x": 663,
     "y": 381,
     "volume": setVolume,
-    "attack": setAttack,
-    "decay": setDecay,
-    "sustain": setSustain,
-    "release": setRelease,
+    "presence": setPresence,
+    "tune": setTune,
 }
 
 # Dictionnaire regroupant les paramètres de la cimbale 3
@@ -178,10 +135,8 @@ cymbal3Params = {
     "x": 383,
     "y": 414,
     "volume": setVolume,
-    "attack": setAttack,
-    "decay": setDecay,
-    "sustain": setSustain,
-    "release": setRelease,
+    "presence": setPresence,
+    "tune": setTune,
 }
 
 # Dictionnaire regroupant les paramètres de la cimbale 4
@@ -190,10 +145,8 @@ cymbal4Params = {
     "x": 583,
     "y": 423,
     "volume": setVolume,
-    "attack": setAttack,
-    "decay": setDecay,
-    "sustain": setSustain,
-    "release": setRelease,
+    "presence": setPresence,
+    "tune": setTune,
 }
 
 # Dictionnaire regroupant les paramètres de la cimbale 5
@@ -202,10 +155,8 @@ cymbal5Params = {
     "x": 717,
     "y": 457,
     "volume": setVolume,
-    "attack": setAttack,
-    "decay": setDecay,
-    "sustain": setSustain,
-    "release": setRelease,
+    "presence": setPresence,
+    "tune": setTune,
 }
 
 # Liste regroupant les dictionnaires correspondant aux paramètres de chaque élément de la batterie
