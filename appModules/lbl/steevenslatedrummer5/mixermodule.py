@@ -51,7 +51,9 @@ def setRouting(key = None, routingButtonX = 0, routingButtonY = 0, ocrDiagonal =
         selectedItem = LBLOCR.getCorrection(ocrResult, ocrDictionnary)
         mouse.moveAndLeftClick(routingButtonX, routingButtonY)
         menu.goToObjectByName(selectedItem)
+        
         return selectedItem
+
     elif key == "up":
         return menu.getPreviousObject()
     elif key == "down":
@@ -93,6 +95,27 @@ kickOutParams = {
     "routingButtonY": 225,
     "routingDiagonal": [309, 215, 444, 235],
     "menuSize": 32,
+    "volume": setVolume,
+    "panoramic": setPanoramic,
+    "state": setState,
+    "routing": setRouting
+}
+
+kickOHParams = {
+    "name": "Kick Over Head",
+    "x": 514,
+    "y": 535,
+    "stateDiagonal": [157, 255, 158, 256],
+    "volumeX": 458,
+    "volumeY": 255,
+    "volumeDiagonal": [478, 245, 528, 265],
+    "panoramicX": 548,
+    "panoramicY": 255,
+    "panoramicDiagonal": [568, 215, 618, 235],
+    "routingButtonX": 420,
+    "routingButtonY": 255,
+    "routingDiagonal": [309, 245, 444, 265],
+    "menuSize": 36,
     "volume": setVolume,
     "panoramic": setPanoramic,
     "state": setState,
@@ -141,6 +164,27 @@ snareBottomParams = {
     "routing": setRouting
 }
 
+snareRNGParams = {
+    "name": "Snare Ring",
+    "x": 418,
+    "y": 494,
+    "stateDiagonal": [157, 255, 158, 256],
+    "volumeX": 458,
+    "volumeY": 255,
+    "volumeDiagonal": [478, 245, 528, 265],
+    "panoramicX": 548,
+    "panoramicY": 255,
+    "panoramicDiagonal": [568, 215, 618, 235],
+    "routingButtonX": 420,
+    "routingButtonY": 255,
+    "routingDiagonal": [309, 245, 444, 265],
+    "menuSize": 36,
+    "volume": setVolume,
+    "panoramic": setPanoramic,
+    "state": setState,
+    "routing": setRouting
+}
+
 tom1Params = {
     "name": "Tom 1",
     "x": 437,
@@ -157,6 +201,48 @@ tom1Params = {
     "routingButtonY": 195,
     "routingDiagonal": [309, 185, 444, 205],
     "menuSize": 32,
+    "volume": setVolume,
+    "panoramic": setPanoramic,
+    "state": setState,
+    "routing": setRouting
+}
+
+tom1OHParams = {
+    "name": "Tom 1 Over Head",
+    "x": 437,
+    "y": 433,
+    "stateDiagonal": [],
+    "volumeX": 458,
+    "volumeY": 225,
+    "volumeDiagonal": [478, 215, 528, 235],
+    "panoramicX": 548,
+    "panoramicY": 235,
+    "panoramicDiagonal": [568, 215, 618, 235],
+    "routingButtonX": 420,
+    "routingButtonY": 225,
+    "routingDiagonal": [309, 215, 444, 235],
+    "menuSize": 32,
+    "volume": setVolume,
+    "panoramic": setPanoramic,
+    "state": setState,
+    "routing": setRouting
+}
+
+tom1RoomParams = {
+    "name": "Tom 1 Room",
+    "x": 437,
+    "y": 433,
+    "stateDiagonal": [157, 255, 158, 256],
+    "volumeX": 458,
+    "volumeY": 255,
+    "volumeDiagonal": [478, 245, 528, 265],
+    "panoramicX": 548,
+    "panoramicY": 255,
+    "panoramicDiagonal": [568, 215, 618, 235],
+    "routingButtonX": 420,
+    "routingButtonY": 255,
+    "routingDiagonal": [309, 245, 444, 265],
+    "menuSize": 36,
     "volume": setVolume,
     "panoramic": setPanoramic,
     "state": setState,
@@ -184,6 +270,49 @@ tom2Params = {
     "routing": setRouting
 }
 
+
+tom2OHParams = {
+    "name": "Tom 2 Over Head",
+    "x": 498,
+    "y": 423,
+    "stateDiagonal": [],
+    "volumeX": 458,
+    "volumeY": 225,
+    "volumeDiagonal": [478, 215, 528, 235],
+    "panoramicX": 548,
+    "panoramicY": 235,
+    "panoramicDiagonal": [568, 215, 618, 235],
+    "routingButtonX": 420,
+    "routingButtonY": 225,
+    "routingDiagonal": [309, 215, 444, 235],
+    "menuSize": 32,
+    "volume": setVolume,
+    "panoramic": setPanoramic,
+    "state": setState,
+    "routing": setRouting
+}
+
+tom2RoomParams = {
+    "name": "Tom 2 Room",
+    "x": 498,
+    "y": 423,
+    "stateDiagonal": [157, 255, 158, 256],
+    "volumeX": 458,
+    "volumeY": 255,
+    "volumeDiagonal": [478, 245, 528, 265],
+    "panoramicX": 548,
+    "panoramicY": 255,
+    "panoramicDiagonal": [568, 215, 618, 235],
+    "routingButtonX": 420,
+    "routingButtonY": 255,
+    "routingDiagonal": [309, 245, 444, 265],
+    "menuSize": 36,
+    "volume": setVolume,
+    "panoramic": setPanoramic,
+    "state": setState,
+    "routing": setRouting
+}
+
 tom3Params = {
     "name": "Tom 3",
     "x": 608,
@@ -199,6 +328,48 @@ tom3Params = {
     "routingButtonY": 195,
     "routingDiagonal": [309, 185, 444, 205],
     "menuSize": 32,
+    "volume": setVolume,
+    "panoramic": setPanoramic,
+    "state": setState,
+    "routing": setRouting
+}
+
+tom3OHParams = {
+    "name": "Tom 3 Over Head",
+    "x": 608,
+    "y": 491,
+    "stateDiagonal": [],
+    "volumeX": 458,
+    "volumeY": 225,
+    "volumeDiagonal": [478, 215, 528, 235],
+    "panoramicX": 548,
+    "panoramicY": 235,
+    "panoramicDiagonal": [568, 215, 618, 235],
+    "routingButtonX": 420,
+    "routingButtonY": 225,
+    "routingDiagonal": [309, 215, 444, 235],
+    "menuSize": 32,
+    "volume": setVolume,
+    "panoramic": setPanoramic,
+    "state": setState,
+    "routing": setRouting
+}
+
+tom3RoomParams = {
+    "name": "Tom 3 Room",
+    "x": 608,
+    "y": 491,
+    "stateDiagonal": [157, 255, 158, 256],
+    "volumeX": 458,
+    "volumeY": 255,
+    "volumeDiagonal": [478, 245, 528, 265],
+    "panoramicX": 548,
+    "panoramicY": 255,
+    "panoramicDiagonal": [568, 215, 618, 235],
+    "routingButtonX": 420,
+    "routingButtonY": 255,
+    "routingDiagonal": [309, 245, 444, 265],
+    "menuSize": 36,
     "volume": setVolume,
     "panoramic": setPanoramic,
     "state": setState,
@@ -226,6 +397,48 @@ tom4Params = {
     "routing": setRouting
 }
 
+tom4OHParams = {
+    "name": "Tom 4 Over Head",
+    "x": 658,
+    "y": 538,
+    "stateDiagonal": [],
+    "volumeX": 458,
+    "volumeY": 225,
+    "volumeDiagonal": [478, 215, 528, 235],
+    "panoramicX": 548,
+    "panoramicY": 235,
+    "panoramicDiagonal": [568, 215, 618, 235],
+    "routingButtonX": 420,
+    "routingButtonY": 225,
+    "routingDiagonal": [309, 215, 444, 235],
+    "menuSize": 32,
+    "volume": setVolume,
+    "panoramic": setPanoramic,
+    "state": setState,
+    "routing": setRouting
+}
+
+tom4RoomParams = {
+    "name": "Tom 4 Room",
+    "x": 658,
+    "y": 538,
+    "stateDiagonal": [157, 255, 158, 256],
+    "volumeX": 458,
+    "volumeY": 255,
+    "volumeDiagonal": [478, 245, 528, 265],
+    "panoramicX": 548,
+    "panoramicY": 255,
+    "panoramicDiagonal": [568, 215, 618, 235],
+    "routingButtonX": 420,
+    "routingButtonY": 255,
+    "routingDiagonal": [309, 245, 444, 265],
+    "menuSize": 36,
+    "volume": setVolume,
+    "panoramic": setPanoramic,
+    "state": setState,
+    "routing": setRouting
+}
+
 hihatParams = {
     "name": "Hi-Hat",
     "x": 360,
@@ -241,6 +454,48 @@ hihatParams = {
     "routingButtonY": 195,
     "routingDiagonal": [309, 185, 444, 205],
     "menuSize": 32,
+    "volume": setVolume,
+    "panoramic": setPanoramic,
+    "state": setState,
+    "routing": setRouting
+}
+
+hihatOHParams = {
+    "name": "Hi-Hat Over Head",
+    "x": 360,
+    "y": 476,
+    "stateDiagonal": [],
+    "volumeX": 458,
+    "volumeY": 225,
+    "volumeDiagonal": [478, 215, 528, 235],
+    "panoramicX": 548,
+    "panoramicY": 235,
+    "panoramicDiagonal": [568, 215, 618, 235],
+    "routingButtonX": 420,
+    "routingButtonY": 225,
+    "routingDiagonal": [309, 215, 444, 235],
+    "menuSize": 32,
+    "volume": setVolume,
+    "panoramic": setPanoramic,
+    "state": setState,
+    "routing": setRouting
+}
+
+hihatRoomParams = {
+    "name": "Hi-Hat Room",
+    "x": 360,
+    "y": 476,
+    "stateDiagonal": [157, 255, 158, 256],
+    "volumeX": 458,
+    "volumeY": 255,
+    "volumeDiagonal": [478, 245, 528, 265],
+    "panoramicX": 548,
+    "panoramicY": 255,
+    "panoramicDiagonal": [568, 215, 618, 235],
+    "routingButtonX": 420,
+    "routingButtonY": 255,
+    "routingDiagonal": [309, 245, 444, 265],
+    "menuSize": 36,
     "volume": setVolume,
     "panoramic": setPanoramic,
     "state": setState,
@@ -331,6 +586,27 @@ cymbal4Params = {
     "routing": setRouting
 }
 
+cymbal4OHParams = {
+    "name": "Ride Over Head",
+    "x": 583,
+    "y": 423,
+    "stateDiagonal": [],
+    "volumeX": 458,
+    "volumeY": 225,
+    "volumeDiagonal": [478, 215, 528, 235],
+    "panoramicX": 548,
+    "panoramicY": 235,
+    "panoramicDiagonal": [568, 215, 618, 235],
+    "routingButtonX": 420,
+    "routingButtonY": 225,
+    "routingDiagonal": [309, 215, 444, 235],
+    "menuSize": 32,
+    "volume": setVolume,
+    "panoramic": setPanoramic,
+    "state": setState,
+    "routing": setRouting
+}
+
 cymbal5Params = {
     "name": "Cymbal 5",
     "x": 717,
@@ -357,14 +633,40 @@ mixerObject = [
     kickOutParams,
     snareTopParams,
     snareBottomParams,
+    snareRNGParams,
     tom1Params,
     tom2Params,
     tom3Params,
     tom4Params,
     hihatParams,
+    cymbal4Params,
+]
+
+overHeadObject = [
+    kickOHParams,
+    tom1OHParams,
+    tom2OHParams,
+    tom3OHParams,
+    tom4OHParams,
+    hihatOHParams,
     cymbal1Params,
     cymbal2Params,
     cymbal3Params,
-    cymbal4Params,
-    cymbal5Params
+    cymbal4OHParams,
+    cymbal5Params,
+]
+
+roomObject = [
+    tom1RoomParams,
+    tom2RoomParams,
+    tom3RoomParams,
+    tom4RoomParams,
+    hihatRoomParams,
+]
+
+mixerTypeList = [
+    {"name": "Pieces Mics", "object": mixerObject},
+    {"name": "Over Heads", "object": overHeadObject},
+    {"name": "Room", "object": roomObject},
+    {"name": "SLR", "object": {}}
 ]

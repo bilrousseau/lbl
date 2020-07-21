@@ -32,8 +32,7 @@ ocrDictionnary = [
     {"correction": "Out 31 Mono", "list": ["out31mn", "oui10mn", "ou!31mn"]},
     {"correction": "Out 32 Mono", "list": ["out32mn", "oui32mn", "ou!32mn"]},
     {"correction": "OverHead", "list": ["oh.ssd5"]},
-    {"correction": "Room", "list": ["room.ssd5", "rooitlssd5"]},
+    {"correction": "Room", "list": ["room.ssd5", "rooitlssd5", ""]},
     {"correction": "Room B", "list": ["roomb.ssd5"]},
     {"correction": "SLR", "list": ["slr.ssd5"]}
-
 ]
