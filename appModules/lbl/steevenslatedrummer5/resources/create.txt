@@ -2,23 +2,23 @@ Diagonales pour lignes du tableau dans la version gratuite.
 
 Kits
 Colonne LIBRARY :
-Diagonale première cellule (132, 50) (407, 70) soit une largeur de 275 et une hauteur de 20
+Diagonale première cellule (132, 50) (407, 72) soit une largeur de 275 et une hauteur de 22
 
 Colonne CATEGORY:
-Diagonale première cellule (412, 50) (672, 70) soit une largeur de 260 et une hauteur de 20
+Diagonale première cellule (412, 50) (672, 72) soit une largeur de 260 et une hauteur de 22
 
 Colonne KIT PRESET
-Diagonale première cellule (677, 50) (942, 70) soit une largeur de 265 et une hauteur de 20
+Diagonale première cellule (677, 50) (942, 72) soit une largeur de 265 et une hauteur de 22
 
 Instruments
 Colonne LIBRARY:
-Diagonale première cellule (132, 50) (407, 70) soit une largeur de 275 et une hauteur de 20
+Diagonale première cellule (132, 50) (407, 72) soit une largeur de 275 et une hauteur de 22
 
 Colonne DRUM TYPE:
-Diagonale première cellule (412, 50) (612, 70) soit une largeur de 200 et une hauteur de 20
+Diagonale première cellule (412, 50) (612, 72) soit une largeur de 200 et une hauteur de 22
 
 Colonne DRUM NAME:
-Diagonale première cellule (617, 50) (942, 70) soit une largeur de 325 et une hauteur de 20
+Diagonale première cellule (617, 50) (942, 72) soit une largeur de 325 et une hauteur de 22
 
 
 

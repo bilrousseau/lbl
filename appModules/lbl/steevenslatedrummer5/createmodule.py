@@ -9,19 +9,19 @@ mouse = Mouse()
 
 col1 = {
     "position": 1,
-    "diagonal": [132, 50, 407, 70],
+    "diagonal": [132, 50, 407, 72],
 }
 
 col2 = {
     "position": 1,
-    "diagonal": [412, 50, 672, 70]
+    "diagonal": [412, 50, 672, 72]
 }
 
 def resetColumns():
     col1["position"] = 1
-    col1["diagonal"] = [132, 50, 407, 70]
+    col1["diagonal"] = [132, 50, 407, 72]
     col2["position"] = 1
-    col2["diagonal"] = [412, 50, 672, 70]
+    col2["diagonal"] = [412, 50, 672, 72]
 
 def getLibraryNumber():
     return len(os.listdir("c:/Program Files/SSD5Library/DrumKitPresets"))
@@ -36,13 +36,13 @@ def getLibrary(key = None, libraryNumber = 0):
     if key == "down":
         if col1["position"] < libraryNumber:
             col1["position"] += 1
-            col1["diagonal"][1] += 20
-            col1["diagonal"][3] += 20
+            col1["diagonal"][1] += 22
+            col1["diagonal"][3] += 22
     elif key == "up":
         if col1["position"] > 1:
             col1["position"] -= 1
-            col1["diagonal"][1] -= 20
-            col1["diagonal"][3] -= 20
+            col1["diagonal"][1] -= 22
+            col1["diagonal"][3] -= 22
         
     mouse.moveAndLeftClick(col1["diagonal"][0] + 5, col1["diagonal"][1] + 5)
 
@@ -52,13 +52,13 @@ def getCategory(key = None, categoryNumber = 0):
     if key == "down":
         if col2["position"] < categoryNumber:
             col2["position"] += 1
-            col2["diagonal"][1] += 20
-            col2["diagonal"][3] += 20
+            col2["diagonal"][1] += 22
+            col2["diagonal"][3] += 22
     elif key == "up":
         if col2["position"] > 1:
             col2["position"] -= 1
-            col2["diagonal"][1] -= 20
-            col2["diagonal"][3] -= 20
+            col2["diagonal"][1] -= 22
+            col2["diagonal"][3] -= 22
         
     mouse.moveAndLeftClick(col2["diagonal"][0] + 5, col2["diagonal"][1] + 5)
 
