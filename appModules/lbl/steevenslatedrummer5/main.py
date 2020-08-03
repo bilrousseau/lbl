@@ -19,7 +19,7 @@ from ..api.menu import Menu
 # Import des modules propres à Steeven Slate Drummer 5
 from .zonelist import zoneList
 from .tablist import tabList
-from .createcontent import createContent
+from .createmodule import createObject, resetColumns, getCategoryNumber
 from .drummodule import drumObject
 from .mixermodule import mixerObject, overHeadObject, mixerTypeList, roomObject
 
@@ -28,7 +28,7 @@ class SteevenSlateDrummer(IAccessible):
     role = "LBL_WINDOW"
     zone = NavObject(zoneList)
     tab = NavObject(tabList)
-    createContent = NavObject(createContent)
+    createObject = NavObject(createObject)
     drumObject = NavObject(drumObject, 3)
     mixerObject = NavObject(mixerObject, 0)
     overHeadObject = NavObject(overHeadObject)
@@ -69,7 +69,12 @@ class SteevenSlateDrummer(IAccessible):
             ui.message(self.tab.getNextObject(mouse = "move_and_click")["name"])
         elif zone == "Content":
             if tab["name"] == "Create":
-                ui.message(self.createContent.getNextObject()["name"])
+                if self.mode == "default":
+                    ui.message(self.createObject.getNextObject()["name"])
+                elif self.mode == "library select":
+                    self.mode = "category select"
+                    ui.message("Category")
+                    ui.message(self.createObject.getObject()["category"]())
             elif tab["name"] == "Drum":
                 if self.mode == "default":
                     ui.message(self.drumObject.getNextObject(mouse = "move_and_click")["name"])
@@ -98,7 +103,12 @@ class SteevenSlateDrummer(IAccessible):
             ui.message(self.tab.getPreviousObject(mouse = "move_and_click")["name"])
         elif zone == "Content":
             if tab["name"] == "Create":
-                ui.message(self.createContent.getPreviousObject()["name"])
+                if self.mode == "default":
+                    ui.message(self.createObject.getPreviousObject()["name"])
+                elif self.mode == "category select":
+                    self.mode = "library select"
+                    ui.message("Library")
+                    ui.message(self.createObject.getObject()["library"]())
             elif tab["name"] == "Drum":
                 if self.mode == "default":
                     ui.message(self.drumObject.getPreviousObject(mouse = "move_and_click")["name"])
@@ -142,6 +152,11 @@ class SteevenSlateDrummer(IAccessible):
                     elif mixerType["name"] == "Room":
                         ui.message(room["routing"]("up", menuSize = room["menuSize"]))
                     keyboardHandler.KeyboardInputGesture.fromName("uparrow").send()
+            elif tab["name"] == "Create":
+                if self.mode == "library select":
+                    ui.message(str(self.createObject.getObject()["library"](key = "up", libraryNumber = self.createObject.getObject()["libraryNumber"]())))
+                elif self.mode == "category select":
+                    ui.message(str(self.createObject.getObject()["category"](key = "up", categoryNumber = self.createObject.getObject()["categoryNumber"]())))
 
     @script(gesture="kb:downarrow")
     def script_goToDownItem(self, gesture):
@@ -175,6 +190,11 @@ class SteevenSlateDrummer(IAccessible):
                     elif mixerType["name"] == "Room":
                         ui.message(room["routing"]("down", menuSize = room["menuSize"]))
                     keyboardHandler.KeyboardInputGesture.fromName("downarrow").send()
+            elif tab["name"] == "Create":
+                if self.mode == "library select":
+                    ui.message(str(self.createObject.getObject()["library"](key = "down", libraryNumber = self.createObject.getObject()["libraryNumber"]())))
+                elif self.mode == "category select":
+                    ui.message(str(self.createObject.getObject()["category"](key = "down", categoryNumber = self.createObject.getObject()["categoryNumber"]())))
 
 
     @script(gesture="kb:shift+uparrow")
@@ -194,7 +214,7 @@ class SteevenSlateDrummer(IAccessible):
                     overheads["volume"]("up", overheads["volumeX"], overheads["volumeY"], overheads["x"], overheads["y"])
                 elif mixerType["name"] == "Room":
                     room["volume"]("up", room["volumeX"], room["volumeY"], room["x"], room["y"])
-
+            
     @script(gesture="kb:shift+downarrow")
     def script_volumeDown(self, gesture):
         zone = self.zone.getObject()
@@ -275,7 +295,6 @@ class SteevenSlateDrummer(IAccessible):
         overheads = self.overHeadObject
         room = self.roomObject
         
-
         if zone == "Content":
             if tab["name"] == "Drum":
                 if self.mode == "default":
@@ -295,7 +314,17 @@ class SteevenSlateDrummer(IAccessible):
                     ui.message("Routing saved")
                     keyboardHandler.KeyboardInputGesture.fromName("enter").send()
                     self.mode = "default"
-  
+            elif tab["name"] == "Create":
+                if self.createObject.getObject()["name"] == "Kits":
+                    if self.mode == "default":
+                        self.mode = "library select"
+                        ui.message("Kit selection, ")
+                        ui.message(self.createObject.getObject()["library"]())
+                    elif self.mode == "library select":
+                        self.mode = "category select"
+                        ui.message("Category")
+                        ui.message(self.createObject.getObject()["category"]())
+                    
     @script(gesture="kb:escape")
     def script_closeFxWindow(self, gesture):
         """
@@ -305,7 +334,7 @@ class SteevenSlateDrummer(IAccessible):
         if self.mode == "default":
             self.zone.resetObject()
             self.tab.resetObject()
-            self.createContent.resetObject()
+            self.createObject.resetObject()
             self.drumObject.resetObject()
             self.mixerTypeList.resetObject()
             self.mixerObject.resetObject()
@@ -321,6 +350,10 @@ class SteevenSlateDrummer(IAccessible):
         elif self.mode == "menu":
             ui.message("Cancel")
             keyboardHandler.KeyboardInputGesture.fromName("escape").send()
+            self.mode = "default"
+        elif self.mode in ["library select", "category select"]:
+            resetColumns()
+            ui.message("Kit selection canceled")
             self.mode = "default"
 
     @script(gesture="kb:h")
@@ -351,3 +384,7 @@ class SteevenSlateDrummer(IAccessible):
                         ui.message(overheads["routing"]("enter", overheads["routingButtonX"], overheads["routingButtonY"], overheads["routingDiagonal"], overheads["menuSize"]))
                     elif mixerType["name"] == "Room":
                         ui.message(room["routing"]("enter", room["routingButtonX"], room["routingButtonY"], room["routingDiagonal"], room["menuSize"]))
+
+    @script(gesture="kb:NVDA+d")
+    def script_testOCRCreate(self, gesture):
+        ui.message(LBLOCR.getText([412, 50, 572, 70]))
