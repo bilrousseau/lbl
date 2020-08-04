@@ -346,6 +346,8 @@ class SteevenSlateDrummer(IAccessible):
                     elif self.mode == "preset select":
                         self.mouse.doubleClick()
                         self.mode = "default"
+                        resetColumns()
+                        ui.message("Kit preset selected")
 
                         
                     
