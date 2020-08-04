@@ -27,6 +27,11 @@ class Mouse:
         winUser.mouse_event(winUser.MOUSEEVENTF_LEFTDOWN, 0, 0, None, None)
         winUser.mouse_event(winUser.MOUSEEVENTF_LEFTUP, 0, 0, None, None)
 
+    def doubleClick(self):
+        self.leftClick()
+        time.sleep(0.05)
+        self.leftClick()
+
     def moveAndLeftClick(self, x, y):
         """
             Déplacement du curseur de souris au coordonnées x, y; et déclanchement d'un click gauche

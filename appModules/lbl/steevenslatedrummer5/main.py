@@ -15,16 +15,18 @@ from scriptHandler import script
 from ..api.navobject import NavObject
 from ..api.ocr import LBLOCR
 from ..api.menu import Menu
+from ..api.mouse import Mouse
 
 # Import des modules propres à Steeven Slate Drummer 5
 from .zonelist import zoneList
 from .tablist import tabList
-from .createmodule import createObject, resetColumns, getCategoryNumber
+from .createmodule import createObject, resetColumns, resetCol1, resetCol2, resetCol3, getPresetNumber
 from .drummodule import drumObject
 from .mixermodule import mixerObject, overHeadObject, mixerTypeList, roomObject
 
 class SteevenSlateDrummer(IAccessible):
     name = "Steeven Slate Drum 5"
+    mouse = Mouse()
     role = "LBL_WINDOW"
     zone = NavObject(zoneList)
     tab = NavObject(tabList)
@@ -42,10 +44,10 @@ class SteevenSlateDrummer(IAccessible):
         """
             Définition du comportement de la touche tab, selon la zone
         """
-
+        
         if self.mode == "default":
             ui.message(self.zone.getNextObject())
-       
+
     @script(gesture="kb:shift+tab")
     def script_goToPreviousZone(self, gesture):
         """
@@ -75,6 +77,10 @@ class SteevenSlateDrummer(IAccessible):
                     self.mode = "category select"
                     ui.message("Category")
                     ui.message(self.createObject.getObject()["category"]())
+                elif self.mode == "category select":
+                    self.mode = "preset select"
+                    ui.message("Kit presets")
+                    ui.message(self.createObject.getObject()["preset"]())
             elif tab["name"] == "Drum":
                 if self.mode == "default":
                     ui.message(self.drumObject.getNextObject(mouse = "move_and_click")["name"])
@@ -106,9 +112,15 @@ class SteevenSlateDrummer(IAccessible):
                 if self.mode == "default":
                     ui.message(self.createObject.getPreviousObject()["name"])
                 elif self.mode == "category select":
+                    resetCol2()
                     self.mode = "library select"
                     ui.message("Library")
                     ui.message(self.createObject.getObject()["library"]())
+                elif self.mode == "preset select":
+                    resetCol3()
+                    self.mode = "category select"
+                    ui.message("Category")
+                    ui.message(self.createObject.getObject()["category"]())
             elif tab["name"] == "Drum":
                 if self.mode == "default":
                     ui.message(self.drumObject.getPreviousObject(mouse = "move_and_click")["name"])
@@ -157,6 +169,8 @@ class SteevenSlateDrummer(IAccessible):
                     ui.message(str(self.createObject.getObject()["library"](key = "up", libraryNumber = self.createObject.getObject()["libraryNumber"]())))
                 elif self.mode == "category select":
                     ui.message(str(self.createObject.getObject()["category"](key = "up", categoryNumber = self.createObject.getObject()["categoryNumber"]())))
+                elif self.mode == "preset select":
+                    ui.message(str(self.createObject.getObject()["preset"](key = "up", presetNumber = self.createObject.getObject()["presetNumber"]())))
 
     @script(gesture="kb:downarrow")
     def script_goToDownItem(self, gesture):
@@ -195,6 +209,8 @@ class SteevenSlateDrummer(IAccessible):
                     ui.message(str(self.createObject.getObject()["library"](key = "down", libraryNumber = self.createObject.getObject()["libraryNumber"]())))
                 elif self.mode == "category select":
                     ui.message(str(self.createObject.getObject()["category"](key = "down", categoryNumber = self.createObject.getObject()["categoryNumber"]())))
+                elif self.mode == "preset select":
+                    ui.message(str(self.createObject.getObject()["preset"](key = "down", presetNumber = self.createObject.getObject()["presetNumber"]())))
 
 
     @script(gesture="kb:shift+uparrow")
@@ -316,14 +332,22 @@ class SteevenSlateDrummer(IAccessible):
                     self.mode = "default"
             elif tab["name"] == "Create":
                 if self.createObject.getObject()["name"] == "Kits":
-                    if self.mode == "default":
-                        self.mode = "library select"
-                        ui.message("Kit selection, ")
-                        ui.message(self.createObject.getObject()["library"]())
-                    elif self.mode == "library select":
+                    if self.mode == "library select":
                         self.mode = "category select"
                         ui.message("Category")
                         ui.message(self.createObject.getObject()["category"]())
+                    elif self.mode == "category select":
+                        self.mode = "preset select"
+                        ui.message("Kit presets")
+                        ui.message(self.createObject.getObject()["preset"]())
+                    elif self.mode == "default":
+                        self.mode = "library select"
+                        ui.message(str(self.createObject.getObject()["library"](key = "enter", libraryNumber = self.createObject.getObject()["libraryNumber"]())))
+                    elif self.mode == "preset select":
+                        self.mouse.doubleClick()
+                        self.mode = "default"
+
+                        
                     
     @script(gesture="kb:escape")
     def script_closeFxWindow(self, gesture):
@@ -351,7 +375,7 @@ class SteevenSlateDrummer(IAccessible):
             ui.message("Cancel")
             keyboardHandler.KeyboardInputGesture.fromName("escape").send()
             self.mode = "default"
-        elif self.mode in ["library select", "category select"]:
+        elif self.mode in ["library select", "category select", "preset select"]:
             resetColumns()
             ui.message("Kit selection canceled")
             self.mode = "default"
@@ -387,4 +411,4 @@ class SteevenSlateDrummer(IAccessible):
 
     @script(gesture="kb:NVDA+d")
     def script_testOCRCreate(self, gesture):
-        ui.message(LBLOCR.getText([412, 50, 572, 70]))
+        ui.message(str(getPresetNumber()))
