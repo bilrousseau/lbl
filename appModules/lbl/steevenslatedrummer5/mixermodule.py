@@ -851,13 +851,16 @@ roomObject = [
     tom4RoomParams,
     hihatRoomParams,
     cymbal1RoomParams,
-    cymbal1RoomBParams,
     cymbal2RoomParams,
-    cymbal2RoomBParams,
     cymbal3RoomParams,
-    cymbal3RoomBParams,
     cymbal4RoomParams,
     cymbal5RoomParams,
+]
+
+roomBObject = [
+    cymbal1RoomBParams,
+    cymbal2RoomBParams,
+    cymbal3RoomBParams,
     cymbal5RoomBParams,
 ]
 
@@ -865,5 +868,6 @@ mixerTypeList = [
     {"name": "Pieces Mics", "object": mixerObject},
     {"name": "Over Heads", "object": overHeadObject},
     {"name": "Room", "object": roomObject},
+    {"name": "Room B", "object": roomBObject},
     # {"name": "SLR", "object": {}}
 ]
