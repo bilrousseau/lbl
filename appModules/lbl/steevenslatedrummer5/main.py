@@ -156,6 +156,12 @@ class SteevenSlateDrummer(IAccessible):
             elif tab["name"] == "Mixer":
                 if self.mode == "default":
                     ui.message(self.mixerTypeList.getPreviousObject()["name"])
+                    if mixerType["name"] == "Over Heads":
+                        ui.message(self.mixerObject.getObject(mouse = "move_and_click")["name"])
+                    elif mixerType["name"] == "Room":
+                        ui.message(self.overHeadObject.getObject(mouse = "move_and_click")["name"])
+                    elif mixerType["name"] == "Pieces Mics":
+                        ui.message(self.roomObject.getObject(mouse = "move_and_click")["name"])
                 if self.mode == "menu":
                     if mixerType["name"] == "Pieces Mics":
                         ui.message(piecesMics["routing"]("up", menuSize = piecesMics["menuSize"]))
@@ -196,6 +202,12 @@ class SteevenSlateDrummer(IAccessible):
             elif tab["name"] == "Mixer":
                 if self.mode == "default":
                     ui.message(self.mixerTypeList.getNextObject()["name"])
+                    if mixerType["name"] == "Room":
+                        ui.message(self.mixerObject.getObject(mouse = "move_and_click")["name"])
+                    elif mixerType["name"] == "Pieces Mics":
+                        ui.message(self.overHeadObject.getObject(mouse = "move_and_click")["name"])
+                    elif mixerType["name"] == "Over Heads":
+                        ui.message(self.roomObject.getObject(mouse = "move_and_click")["name"])
                 if self.mode == "menu":
                     if mixerType["name"] == "Pieces Mics":
                         ui.message(piecesMics["routing"]("down", menuSize = piecesMics["menuSize"]))
