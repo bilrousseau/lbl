@@ -122,6 +122,48 @@ kickOHParams = {
     "routing": setRouting
 }
 
+kickRoomParams = {
+    "name": "Kick Room",
+    "x": 514,
+    "y": 535,
+    "stateDiagonal": [157, 285, 158, 286],
+    "volumeX": 458,
+    "volumeY": 285,
+    "volumeDiagonal": [478, 275, 528, 295],
+    "panoramicX": 548,
+    "panoramicY": 285,
+    "panoramicDiagonal": [568, 275, 618, 295],
+    "routingButtonX": 420,
+    "routingButtonY": 285,
+    "routingDiagonal": [309, 275, 444, 295],
+    "menuSize": 36,
+    "volume": setVolume,
+    "panoramic": setPanoramic,
+    "state": setState,
+    "routing": setRouting
+}
+
+kickRoomBParams = {
+    "name": "Kick Room B",
+    "x": 514,
+    "y": 535,
+    "stateDiagonal": [157, 315, 158, 316],
+    "volumeX": 458,
+    "volumeY": 315,
+    "volumeDiagonal": [478, 305, 528, 325],
+    "panoramicX": 548,
+    "panoramicY": 315,
+    "panoramicDiagonal": [568, 305, 618, 325],
+    "routingButtonX": 420,
+    "routingButtonY": 315,
+    "routingDiagonal": [309, 305, 444, 325],
+    "menuSize": 36,
+    "volume": setVolume,
+    "panoramic": setPanoramic,
+    "state": setState,
+    "routing": setRouting
+}
+
 snareTopParams = {
     "name": "Snare Top",
     "x": 418,
@@ -179,6 +221,48 @@ snareRNGParams = {
     "routingButtonY": 255,
     "routingDiagonal": [309, 245, 444, 265],
     "menuSize": 32,
+    "volume": setVolume,
+    "panoramic": setPanoramic,
+    "state": setState,
+    "routing": setRouting
+}
+
+snareOHParams = {
+    "name": "Snare Over Head",
+    "x": 418,
+    "y": 494,
+    "stateDiagonal": [157, 285, 158, 286],
+    "volumeX": 458,
+    "volumeY": 285,
+    "volumeDiagonal": [478, 275, 528, 295],
+    "panoramicX": 548,
+    "panoramicY": 285,
+    "panoramicDiagonal": [568, 275, 618, 295],
+    "routingButtonX": 420,
+    "routingButtonY": 285,
+    "routingDiagonal": [309, 275, 444, 295],
+    "menuSize": 36,
+    "volume": setVolume,
+    "panoramic": setPanoramic,
+    "state": setState,
+    "routing": setRouting
+}
+
+snareRoomParams = {
+    "name": "Snare Room",
+    "x": 418,
+    "y": 494,
+    "stateDiagonal": [157, 315, 158, 316],
+    "volumeX": 458,
+    "volumeY": 315,
+    "volumeDiagonal": [478, 305, 528, 325],
+    "panoramicX": 548,
+    "panoramicY": 315,
+    "panoramicDiagonal": [568, 305, 618, 325],
+    "routingButtonX": 420,
+    "routingButtonY": 315,
+    "routingDiagonal": [309, 305, 444, 325],
+    "menuSize": 36,
     "volume": setVolume,
     "panoramic": setPanoramic,
     "state": setState,
@@ -249,6 +333,27 @@ tom1RoomParams = {
     "routing": setRouting
 }
 
+tom1RoomBParams = {
+    "name": "Tom1 Room B",
+    "x": 437,
+    "y": 433,
+    "stateDiagonal": [157, 285, 158, 286],
+    "volumeX": 458,
+    "volumeY": 285,
+    "volumeDiagonal": [478, 275, 528, 295],
+    "panoramicX": 548,
+    "panoramicY": 285,
+    "panoramicDiagonal": [568, 275, 618, 295],
+    "routingButtonX": 420,
+    "routingButtonY": 285,
+    "routingDiagonal": [309, 275, 444, 295],
+    "menuSize": 36,
+    "volume": setVolume,
+    "panoramic": setPanoramic,
+    "state": setState,
+    "routing": setRouting
+}
+
 tom2Params = {
     "name": "Tom 2",
     "x": 498,
@@ -305,6 +410,27 @@ tom2RoomParams = {
     "routingButtonX": 420,
     "routingButtonY": 255,
     "routingDiagonal": [309, 245, 444, 265],
+    "menuSize": 36,
+    "volume": setVolume,
+    "panoramic": setPanoramic,
+    "state": setState,
+    "routing": setRouting
+}
+
+tom2RoomBParams = {
+    "name": "Tom 2 Room B",
+    "x": 498,
+    "y": 423,
+    "stateDiagonal": [157, 285, 158, 286],
+    "volumeX": 458,
+    "volumeY": 285,
+    "volumeDiagonal": [478, 275, 528, 295],
+    "panoramicX": 548,
+    "panoramicY": 285,
+    "panoramicDiagonal": [568, 275, 618, 295],
+    "routingButtonX": 420,
+    "routingButtonY": 285,
+    "routingDiagonal": [309, 275, 444, 295],
     "menuSize": 36,
     "volume": setVolume,
     "panoramic": setPanoramic,
@@ -375,6 +501,27 @@ tom3RoomParams = {
     "routing": setRouting
 }
 
+tom3RoomBParams = {
+    "name": "Tom 3 Room B",
+    "x": 608,
+    "y": 491,
+    "stateDiagonal": [157, 285, 158, 286],
+    "volumeX": 458,
+    "volumeY": 285,
+    "volumeDiagonal": [478, 275, 528, 295],
+    "panoramicX": 548,
+    "panoramicY": 285,
+    "panoramicDiagonal": [568, 275, 618, 295],
+    "routingButtonX": 420,
+    "routingButtonY": 285,
+    "routingDiagonal": [309, 275, 444, 295],
+    "menuSize": 36,
+    "volume": setVolume,
+    "panoramic": setPanoramic,
+    "state": setState,
+    "routing": setRouting
+}
+
 tom4Params = {
     "name": "Tom 4",
     "x": 658,
@@ -438,6 +585,27 @@ tom4RoomParams = {
     "routing": setRouting
 }
 
+tom4RoomBParams = {
+    "name": "Tom 4 Room B",
+    "x": 658,
+    "y": 538,
+    "stateDiagonal": [157, 285, 158, 286],
+    "volumeX": 458,
+    "volumeY": 285,
+    "volumeDiagonal": [478, 275, 528, 295],
+    "panoramicX": 548,
+    "panoramicY": 285,
+    "panoramicDiagonal": [568, 275, 618, 295],
+    "routingButtonX": 420,
+    "routingButtonY": 285,
+    "routingDiagonal": [309, 275, 444, 295],
+    "menuSize": 36,
+    "volume": setVolume,
+    "panoramic": setPanoramic,
+    "state": setState,
+    "routing": setRouting
+}
+
 hihatParams = {
     "name": "Hi-Hat",
     "x": 360,
@@ -494,6 +662,27 @@ hihatRoomParams = {
     "routingButtonX": 420,
     "routingButtonY": 255,
     "routingDiagonal": [309, 245, 444, 265],
+    "menuSize": 36,
+    "volume": setVolume,
+    "panoramic": setPanoramic,
+    "state": setState,
+    "routing": setRouting
+}
+
+hiHatRoomBParams = {
+    "name": "Hi-Hat Room B",
+    "x": 360,
+    "y": 476,
+    "stateDiagonal": [157, 285, 158, 286],
+    "volumeX": 458,
+    "volumeY": 285,
+    "volumeDiagonal": [478, 275, 528, 295],
+    "panoramicX": 548,
+    "panoramicY": 285,
+    "panoramicDiagonal": [568, 275, 618, 295],
+    "routingButtonX": 420,
+    "routingButtonY": 285,
+    "routingDiagonal": [309, 275, 444, 295],
     "menuSize": 36,
     "volume": setVolume,
     "panoramic": setPanoramic,
@@ -753,6 +942,27 @@ cymbal4RoomParams = {
     "routing": setRouting
 }
 
+cymbal4RoomBParams = {
+    "name": "Ride Room B",
+    "x": 583,
+    "y": 423,
+    "stateDiagonal": [157, 285, 158, 286],
+    "volumeX": 458,
+    "volumeY": 285,
+    "volumeDiagonal": [478, 275, 528, 295],
+    "panoramicX": 548,
+    "panoramicY": 285,
+    "panoramicDiagonal": [568, 275, 618, 295],
+    "routingButtonX": 420,
+    "routingButtonY": 285,
+    "routingDiagonal": [309, 275, 444, 295],
+    "menuSize": 36,
+    "volume": setVolume,
+    "panoramic": setPanoramic,
+    "state": setState,
+    "routing": setRouting
+}
+
 cymbal5Params = {
     "name": "Cymbal 5 Over Head",
     "x": 717,
@@ -832,6 +1042,7 @@ mixerObject = [
 
 overHeadObject = [
     kickOHParams,
+    snareOHParams,
     tom1OHParams,
     tom2OHParams,
     tom3OHParams,
@@ -845,6 +1056,8 @@ overHeadObject = [
 ]
 
 roomObject = [
+    kickRoomParams,
+    snareRoomParams,
     tom1RoomParams,
     tom2RoomParams,
     tom3RoomParams,
@@ -858,9 +1071,16 @@ roomObject = [
 ]
 
 roomBObject = [
+    kickRoomBParams,
+    tom1RoomBParams,
+    tom2RoomBParams,
+    tom3RoomBParams,
+    tom4RoomBParams,
+    hiHatRoomBParams,
     cymbal1RoomBParams,
     cymbal2RoomBParams,
     cymbal3RoomBParams,
+    cymbal4RoomBParams,
     cymbal5RoomBParams,
 ]
 
