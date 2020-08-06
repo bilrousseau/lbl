@@ -41,18 +41,18 @@ def resetColumns():
     resetCol3()
 
 def getLibraryNumber():
-    return len(os.listdir("c:/Program Files/SSD5Library/DrumKitPresets"))
+    return len(os.listdir("c:/Program Files (x86)/VSTPlugins/SSD5Library/DrumKitPresets"))
 
 def getCategoryNumber():
-    lib = os.listdir("c:/Program Files/SSD5Library/DrumKitPresets")[col1["position"] - 1]
-    path = "c:/Program Files/SSD5Library/DrumKitPresets/" + lib
+    lib = os.listdir("c:/Program Files (x86)/VSTPlugins/SSD5Library/DrumKitPresets/")[col1["position"] - 1]
+    path = "c:/Program Files (x86)/VSTPlugins/SSD5Library/DrumKitPresets/" + lib
 
     return len(os.listdir(path))
 
 def getPresetNumber():
-    lib = os.listdir("c:/Program Files/SSD5Library/DrumKitPresets")[col1["position"] - 1]
-    category = os.listdir("c:/Program Files/SSD5Library/DrumKitPresets/" + lib)[col2["position"] - 1]
-    path = "c:/Program Files/SSD5Library/DrumKitPresets/" + lib+ "/" + category
+    lib = os.listdir("c:/Program Files (x86)/VSTPlugins/SSD5Library/DrumKitPresets/")[col1["position"] - 1]
+    category = os.listdir("c:/Program Files (x86)/VSTPlugins/SSD5Library/DrumKitPresets/" + lib)[col2["position"] - 1]
+    path = "c:/Program Files (x86)/VSTPlugins/SSD5Library/DrumKitPresets/" + lib + "/" + category
 
     return len(os.listdir(path))
 

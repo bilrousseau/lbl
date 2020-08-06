@@ -258,7 +258,7 @@ class SteevenSlateDrummer(IAccessible):
                 elif mixerType["name"] == "Room":
                     room["volume"]("up", room["volumeX"], room["volumeY"], room["x"], room["y"])
                 elif mixerType["name"] == "Room B":
-                    roomB["volume"]("up", room["volumeX"], room["volumeY"], room["x"], room["y"])
+                    roomB["volume"]("up", roomB["volumeX"], roomB["volumeY"], roomB["x"], roomB["y"])
             
     @script(gesture="kb:shift+downarrow")
     def script_volumeDown(self, gesture):
@@ -279,7 +279,7 @@ class SteevenSlateDrummer(IAccessible):
                 elif mixerType["name"] == "Room":
                     room["volume"]("down", room["volumeX"], room["volumeY"], room["x"], room["y"])
                 elif mixerType["name"] == "Room B":
-                    roomB["volume"]("down", room["volumeX"], room["volumeY"], room["x"], room["y"])
+                    roomB["volume"]("down", roomB["volumeX"], roomB["volumeY"], roomB["x"], roomB["y"])
 
     @script(gesture="kb:shift+leftarrow")
     def script_panoramicLeft(self, gesture):
@@ -301,7 +301,7 @@ class SteevenSlateDrummer(IAccessible):
                 elif mixerType["name"] == "Room":
                     room["panoramic"]("left", room["panoramicX"], room["panoramicY"], room["x"], room["y"])
                 elif mixerType["name"] == "Room B":
-                    roomB["panoramic"]("left", room["panoramicX"], room["panoramicY"], room["x"], room["y"])
+                    roomB["panoramic"]("left", roomB["panoramicX"], roomB["panoramicY"], roomB["x"], roomB["y"])
 
     @script(gesture="kb:shift+rightarrow")
     def script_panoramicRight(self, gesture):
@@ -322,7 +322,7 @@ class SteevenSlateDrummer(IAccessible):
                 elif mixerType["name"] == "Room":
                     room["panoramic"]("right", room["panoramicX"], room["panoramicY"], room["x"], room["y"])
                 elif mixerType["name"] == "Room B":
-                    roomB["panoramic"]("right", room["panoramicX"], room["panoramicY"], room["x"], room["y"])
+                    roomB["panoramic"]("right", roomB["panoramicX"], roomB["panoramicY"], roomB["x"], roomB["y"])
 
     @script(gesture="kb:m")
     def script_changeState(self, gesture):
@@ -347,7 +347,7 @@ class SteevenSlateDrummer(IAccessible):
         piecesMics = self.mixerObject
         overheads = self.overHeadObject
         room = self.roomObject
-        roomB = self.roomBObject.getObject()
+        roomB = self.roomBObject
         
         if zone == "Content":
             if tab["name"] == "Drum":
