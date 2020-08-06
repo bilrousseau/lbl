@@ -48,7 +48,7 @@ def getSmartName():
     fxName = getSelectedFXName()
 
     if fxName.startswith("VSTi: SSDSampler5"):
-        return "Steeven Slate Drummer 5"
+        return "Steeven Slate Drum 5"
     elif fxName.startswith("VSTi: DSK Saxophones"):
         return "DSK Saxophones"
     elif fxName.startswith("VSTi: EZdrummer"):

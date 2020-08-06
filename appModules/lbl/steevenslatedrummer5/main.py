@@ -20,7 +20,7 @@ from ..api.mouse import Mouse
 # Import des modules propres à Steeven Slate Drummer 5
 from .zonelist import zoneList
 from .tablist import tabList
-from .createmodule import createObject, resetColumns, resetCol1, resetCol2, resetCol3, getPresetNumber
+from .createmodule import createObject, resetColumns, resetCol1, resetCol2, resetCol3
 from .drummodule import drumObject
 from .mixermodule import mixerObject, overHeadObject, mixerTypeList, roomObject, roomBObject
 
@@ -440,7 +440,11 @@ class SteevenSlateDrummer(IAccessible):
         roomB = self.roomBObject.getObject()
 
         if zone == "Content":
-            if tab["name"] == "Mixer":
+            if tab["name"] == "Drum":
+                if self.mode == "default":
+                    self.mode = "piece_settings"
+                    ui.message(self.drumObject.getObject()["name"] + "Configuration, " + self.drumObject.getSubObject()[0])
+            elif tab["name"] == "Mixer":
                 if self.mode == "default":
                     self.mode = "menu"
                     if mixerType["name"] == "Pieces Mics":
@@ -454,4 +458,5 @@ class SteevenSlateDrummer(IAccessible):
 
     @script(gesture="kb:NVDA+d")
     def script_testOCRCreate(self, gesture):
-        ui.message(str(getPresetNumber()))
+        pass
+
