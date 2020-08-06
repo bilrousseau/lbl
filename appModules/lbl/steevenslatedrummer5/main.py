@@ -180,7 +180,7 @@ class SteevenSlateDrummer(IAccessible):
                     elif mixerType["name"] == "Room B":
                         ui.message(roomB["routing"]("up", menuSize = roomB["menuSize"]))
                     keyboardHandler.KeyboardInputGesture.fromName("uparrow").send()
-            elif tab["name"] == "Create":
+            elif tab["name"] == "Create" and self.mode != "default":
                 if self.mode == "library select":
                     ui.message(str(self.createObject.getObject()["library"](key = "up", libraryNumber = self.createObject.getObject()["libraryNumber"]())))
                 elif self.mode == "category select":
@@ -231,7 +231,7 @@ class SteevenSlateDrummer(IAccessible):
                     elif mixerType["name"] == "Room B":
                         ui.message(roomB["routing"]("down", menuSize = room["menuSize"]))
                     keyboardHandler.KeyboardInputGesture.fromName("downarrow").send()
-            elif tab["name"] == "Create":
+            elif tab["name"] == "Create" and self.mode != "default":
                 if self.mode == "library select":
                     ui.message(str(self.createObject.getObject()["library"](key = "down", libraryNumber = self.createObject.getObject()["libraryNumber"]())))
                 elif self.mode == "category select":
@@ -372,7 +372,10 @@ class SteevenSlateDrummer(IAccessible):
                     self.mode = "default"
             elif tab["name"] == "Create":
                 if self.createObject.getObject()["name"] == "Kits":
-                    if self.mode == "library select":
+                    if self.mode == "default":
+                        ui.message(str(self.createObject.getObject()["library"](key = "enter", libraryNumber = self.createObject.getObject()["libraryNumber"]())))
+                        self.mode = "library select"
+                    elif self.mode == "library select":
                         self.mode = "category select"
                         ui.message("Category")
                         ui.message(self.createObject.getObject()["category"]())
@@ -380,9 +383,6 @@ class SteevenSlateDrummer(IAccessible):
                         self.mode = "preset select"
                         ui.message("Kit presets")
                         ui.message(self.createObject.getObject()["preset"]())
-                    elif self.mode == "default":
-                        self.mode = "library select"
-                        ui.message(str(self.createObject.getObject()["library"](key = "enter", libraryNumber = self.createObject.getObject()["libraryNumber"]())))
                     elif self.mode == "preset select":
                         self.mouse.doubleClick()
                         self.mode = "default"

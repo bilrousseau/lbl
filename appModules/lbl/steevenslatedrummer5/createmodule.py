@@ -1,6 +1,7 @@
 import os
 import ui
 import tones
+import time
 
 from ..api.ocr import LBLOCR
 from ..api.mouse import Mouse
@@ -68,7 +69,6 @@ def getLibrary(key = None, libraryNumber = 0):
             col1["diagonal"][3] -= 22
     if key == "enter":
         ui.message("Kick selection")
-        
     mouse.moveAndLeftClick(col1["diagonal"][0] + 5, col1["diagonal"][1] + 5)
 
     return LBLOCR.getText(col1["diagonal"])
