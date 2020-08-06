@@ -691,7 +691,7 @@ hiHatRoomBParams = {
 }
 
 cymbal1Params = {
-    "name": "Cymbal 1 Over Head",
+    "name": "Crash 1 Over Head",
     "x": 438,
     "y": 374,
     "stateDiagonal": [157, 195, 158, 196],
@@ -712,7 +712,7 @@ cymbal1Params = {
 }
 
 cymbal1RoomParams = {
-    "name": "Cymbal 1 Room",
+    "name": "Crash 1 Room",
     "x": 438,
     "y": 374,
     "stateDiagonal": [],
@@ -733,7 +733,7 @@ cymbal1RoomParams = {
 }
 
 cymbal1RoomBParams = {
-    "name": "Cymbal 1 Room B",
+    "name": "Crash 1 Room B",
     "x": 438,
     "y": 374,
     "stateDiagonal": [157, 255, 158, 256],
@@ -754,7 +754,7 @@ cymbal1RoomBParams = {
 }
 
 cymbal2Params = {
-    "name": "Cymbal 2 Over Head",
+    "name": "Crash 2 Over Head",
     "x": 663,
     "y": 381,
     "stateDiagonal": [157, 195, 158, 196],
@@ -775,7 +775,7 @@ cymbal2Params = {
 }
 
 cymbal2RoomParams = {
-    "name": "Cymbal 2 Room",
+    "name": "Crash 2 Room",
     "x": 663,
     "y": 381,
     "stateDiagonal": [],
@@ -796,7 +796,7 @@ cymbal2RoomParams = {
 }
 
 cymbal2RoomBParams = {
-    "name": "Cymbal 2 Room B",
+    "name": "Crash 2 Room B",
     "x": 663,
     "y": 381,
     "stateDiagonal": [157, 255, 158, 256],
@@ -817,7 +817,7 @@ cymbal2RoomBParams = {
 }
 
 cymbal3Params = {
-    "name": "Cymbal 3 Over Head",
+    "name": "Splash Over Head",
     "x": 383,
     "y": 414,
     "stateDiagonal": [157, 195, 158, 196],
@@ -838,7 +838,7 @@ cymbal3Params = {
 }
 
 cymbal3RoomParams = {
-    "name": "Cymbal 3 Room",
+    "name": "Splash Room",
     "x": 383,
     "y": 414,
     "stateDiagonal": [],
@@ -859,7 +859,7 @@ cymbal3RoomParams = {
 }
 
 cymbal3RoomBParams = {
-    "name": "Cymbal 3 Room B",
+    "name": "Splash Room B",
     "x": 383,
     "y": 414,
     "stateDiagonal": [157, 255, 158, 256],
@@ -964,7 +964,7 @@ cymbal4RoomBParams = {
 }
 
 cymbal5Params = {
-    "name": "Cymbal 5 Over Head",
+    "name": "China Over Head",
     "x": 717,
     "y": 457,
     "stateDiagonal": [157, 195, 158, 196],
@@ -985,7 +985,7 @@ cymbal5Params = {
 }
 
 cymbal5RoomParams = {
-    "name": "Cymbal 5 Room",
+    "name": "China Room",
     "x": 717,
     "y": 457,
     "stateDiagonal": [],
@@ -1006,7 +1006,7 @@ cymbal5RoomParams = {
 }
 
 cymbal5RoomBParams = {
-    "name": "Cymbal 5 Room B",
+    "name": "China Room B",
     "x": 717,
     "y": 457,
     "stateDiagonal": [157, 255, 158, 256],

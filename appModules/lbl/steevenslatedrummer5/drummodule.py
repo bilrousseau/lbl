@@ -111,7 +111,7 @@ hihatParams = {
 
 # Dictionnaire regroupant les paramètres de la cimbale 1
 cymbal1Params = {
-    "name": "Cymbale 1",
+    "name": "Crash 1",
     "x": 438,
     "y": 374,
     "volume": setVolume,
@@ -121,7 +121,7 @@ cymbal1Params = {
 
 # Dictionnaire regroupant les paramètres de la cimbale 2
 cymbal2Params = {
-    "name": "Cymbale 2",
+    "name": "Crash 2",
     "x": 663,
     "y": 381,
     "volume": setVolume,
@@ -131,7 +131,7 @@ cymbal2Params = {
 
 # Dictionnaire regroupant les paramètres de la cimbale 3
 cymbal3Params = {
-    "name": "Cymbale 3",
+    "name": "Splash",
     "x": 383,
     "y": 414,
     "volume": setVolume,
@@ -151,7 +151,7 @@ cymbal4Params = {
 
 # Dictionnaire regroupant les paramètres de la cimbale 5
 cymbal5Params = {
-    "name": "Cymbale 5",
+    "name": "Shina",
     "x": 717,
     "y": 457,
     "volume": setVolume,
