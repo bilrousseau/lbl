@@ -447,13 +447,13 @@ class SteevenSlateDrummer(IAccessible):
                 if self.mode == "default":
                     self.mode = "menu"
                     if mixerType["name"] == "Pieces Mics":
-                        ui.message(piecesMics["routing"]("enter", piecesMics["routingButtonX"], piecesMics["routingButtonY"], piecesMics["routingDiagonal"], piecesMics["menuSize"]))
+                        ui.message(piecesMics["routing"]("enter", piecesMics["routingButtonX"], piecesMics["routingButtonY"], piecesMics["routingDiagonal"], piecesMics["menuSize"], piecesMics["scroll"]))
                     elif mixerType["name"] == "Over Heads":
-                        ui.message(overheads["routing"]("enter", overheads["routingButtonX"], overheads["routingButtonY"], overheads["routingDiagonal"], overheads["menuSize"]))
+                        ui.message(overheads["routing"]("enter", overheads["routingButtonX"], overheads["routingButtonY"], overheads["routingDiagonal"], overheads["menuSize"], overheads["scroll"]))
                     elif mixerType["name"] == "Room":
-                        ui.message(room["routing"]("enter", room["routingButtonX"], room["routingButtonY"], room["routingDiagonal"], room["menuSize"]))
+                        ui.message(room["routing"]("enter", room["routingButtonX"], room["routingButtonY"], room["routingDiagonal"], room["menuSize"], room["scroll"]))
                     elif mixerType["name"] == "Room B":
-                        ui.message(roomB["routing"]("enter", roomB["routingButtonX"], roomB["routingButtonY"], roomB["routingDiagonal"], roomB["menuSize"]))
+                        ui.message(roomB["routing"]("enter", roomB["routingButtonX"], roomB["routingButtonY"], roomB["routingDiagonal"], roomB["menuSize"], roomB["scroll"]))
 
     @script(gesture="kb:NVDA+d")
     def script_testOCRCreate(self, gesture):

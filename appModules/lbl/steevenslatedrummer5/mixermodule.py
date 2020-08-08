@@ -42,7 +42,8 @@ def setState(diagonal = []):
     mouse.moveAndLeftClick(diagonal[0], diagonal[1])
     return state
 
-def setRouting(key = None, routingButtonX = 0, routingButtonY = 0, ocrDiagonal = [], menuSize = 0):
+def setRouting(key = None, routingButtonX = 0, routingButtonY = 0, ocrDiagonal = [], menuSize = 0, scroll = 0):
+    mouse.moveAndScroll(172, 307, scroll)
     if menuSize == 32:
         menu = menu32
     elif menuSize == 36:
