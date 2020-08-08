@@ -11,9 +11,9 @@ def setVolume(arrow, x = 0, y = 0):
     """
 
     if arrow == "right":
-        mouse.moveAndScrole(332, 77, 50)
+        mouse.moveAndScroll(332, 77, 50)
     elif arrow == "left":
-        mouse.moveAndScrole(332, 77, -50)
+        mouse.moveAndScroll(332, 77, -50)
     mouse.moveAndLeftClick(x, y)
 
 def setPresence(arrow, x, y):
@@ -22,9 +22,9 @@ def setPresence(arrow, x, y):
     """
 
     if arrow == "right":
-        mouse.moveAndScrole(700, 188, 34)
+        mouse.moveAndScroll(700, 188, 34)
     elif arrow == "left":
-        mouse.moveAndScrole(700, 188, -34)
+        mouse.moveAndScroll(700, 188, -34)
     mouse.moveAndLeftClick(x, y)
 
 def setTune(arrow, x = 0, y = 0):
@@ -33,9 +33,9 @@ def setTune(arrow, x = 0, y = 0):
     """
 
     if arrow == "right":
-        mouse.moveAndScrole(332, 110, 50)
+        mouse.moveAndScroll(332, 110, 50)
     elif arrow == "left":
-        mouse.moveAndScrole(332, 110, -50)
+        mouse.moveAndScroll(332, 110, -50)
     mouse.moveAndLeftClick(x, y)
 
 

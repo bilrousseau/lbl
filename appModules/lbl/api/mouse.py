@@ -48,7 +48,7 @@ class Mouse:
         time.sleep(0.05)
         winUser.mouse_event(winUser.MOUSEEVENTF_LEFTUP, 0, 0, None, None)
 
-    def moveAndScrole(self, x, y, step):
+    def moveAndScroll(self, x, y, step):
         self.moveCursor(x, y)
         winUser.mouse_event(winUser.MOUSEEVENTF_WHEEL, 0, 0, step, None)
         time.sleep(0.01)

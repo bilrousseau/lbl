@@ -14,18 +14,18 @@ menu36 = NavObject(routingMenu36)
 
 def setVolume(key = None, volumeX = 0, volumeY = 0, pieceX = 0, pieceY = 0):
     if key == "up":
-        mouse.moveAndScrole(volumeX, volumeY, 20)
+        mouse.moveAndScroll(volumeX, volumeY, 20)
         mouse.moveAndLeftClick(pieceX, pieceY)
     elif key == "down":
-        mouse.moveAndScrole(volumeX, volumeY, -20)
+        mouse.moveAndScroll(volumeX, volumeY, -20)
         mouse.moveAndLeftClick(pieceX, pieceY)
 
 def setPanoramic(key = None, panoramicX = 0, panoramicY = 0, pieceX = 0, pieceY = 0):
     if key == "left":
-        mouse.moveAndScrole(panoramicX, panoramicY, -20)
+        mouse.moveAndScroll(panoramicX, panoramicY, -20)
         mouse.moveAndLeftClick(pieceX, pieceY)
     elif key == "right":
-        mouse.moveAndScrole(panoramicX, panoramicY, 20)
+        mouse.moveAndScroll(panoramicX, panoramicY, 20)
         mouse.moveAndLeftClick(pieceX, pieceY)
 
 def setState(diagonal = []):
