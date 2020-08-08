@@ -293,15 +293,14 @@ class SteevenSlateDrummer(IAccessible):
 
         if zone == "Content":
             if tab["name"] == "Mixer":
-                
                 if mixerType["name"] == "Pieces Mics":
-                    piecesMics["panoramic"]("left", piecesMics["panoramicX"], piecesMics["panoramicY"], piecesMics["x"], piecesMics["y"])
+                    piecesMics["panoramic"]("left", piecesMics["panoramicX"], piecesMics["panoramicY"], piecesMics["x"], piecesMics["y"], piecesMics["scroll"])
                 elif mixerType["name"] == "Over Heads":
-                    overheads["panoramic"]("left", overheads["panoramicX"], overheads["panoramicY"], overheads["x"], overheads["y"])
+                    overheads["panoramic"]("left", overheads["panoramicX"], overheads["panoramicY"], overheads["x"], overheads["y"], overheads["scroll"])
                 elif mixerType["name"] == "Room":
-                    room["panoramic"]("left", room["panoramicX"], room["panoramicY"], room["x"], room["y"])
+                    room["panoramic"]("left", room["panoramicX"], room["panoramicY"], room["x"], room["y"], room["scroll"])
                 elif mixerType["name"] == "Room B":
-                    roomB["panoramic"]("left", roomB["panoramicX"], roomB["panoramicY"], roomB["x"], roomB["y"])
+                    roomB["panoramic"]("left", roomB["panoramicX"], roomB["panoramicY"], roomB["x"], roomB["y"], roomB["scroll"])
 
     @script(gesture="kb:shift+rightarrow")
     def script_panoramicRight(self, gesture):
@@ -316,13 +315,13 @@ class SteevenSlateDrummer(IAccessible):
         if zone == "Content":
             if tab["name"] == "Mixer":
                 if mixerType["name"] == "Pieces Mics":
-                    piecesMics["panoramic"]("right", piecesMics["panoramicX"], piecesMics["panoramicY"], piecesMics["x"], piecesMics["y"])
+                    piecesMics["panoramic"]("right", piecesMics["panoramicX"], piecesMics["panoramicY"], piecesMics["x"], piecesMics["y"], piecesMics["scroll"])
                 elif mixerType["name"] == "Over Heads":
-                    overheads["panoramic"]("right", overheads["panoramicX"], overheads["panoramicY"], overheads["x"], overheads["y"])
+                    overheads["panoramic"]("right", overheads["panoramicX"], overheads["panoramicY"], overheads["x"], overheads["y"], overheads["scroll"])
                 elif mixerType["name"] == "Room":
-                    room["panoramic"]("right", room["panoramicX"], room["panoramicY"], room["x"], room["y"])
+                    room["panoramic"]("right", room["panoramicX"], room["panoramicY"], room["x"], room["y"], room["scroll"])
                 elif mixerType["name"] == "Room B":
-                    roomB["panoramic"]("right", roomB["panoramicX"], roomB["panoramicY"], roomB["x"], roomB["y"])
+                    roomB["panoramic"]("right", roomB["panoramicX"], roomB["panoramicY"], roomB["x"], roomB["y"], roomB["scroll"])
 
     @script(gesture="kb:m")
     def script_changeState(self, gesture):
@@ -458,5 +457,5 @@ class SteevenSlateDrummer(IAccessible):
 
     @script(gesture="kb:NVDA+d")
     def script_testOCRCreate(self, gesture):
-        self.mouse.moveAndScroll(172, 307, 75)
+        pass
 

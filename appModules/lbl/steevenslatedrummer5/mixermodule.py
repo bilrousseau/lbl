@@ -21,7 +21,8 @@ def setVolume(key = None, volumeX = 0, volumeY = 0, pieceX = 0, pieceY = 0, scro
         mouse.moveAndScroll(volumeX, volumeY, -20)
         mouse.moveAndLeftClick(pieceX, pieceY)
 
-def setPanoramic(key = None, panoramicX = 0, panoramicY = 0, pieceX = 0, pieceY = 0):
+def setPanoramic(key = None, panoramicX = 0, panoramicY = 0, pieceX = 0, pieceY = 0, scroll = 0):
+    mouse.moveAndScroll(172, 307, scroll)
     if key == "left":
         mouse.moveAndScroll(panoramicX, panoramicY, -20)
         mouse.moveAndLeftClick(pieceX, pieceY)
