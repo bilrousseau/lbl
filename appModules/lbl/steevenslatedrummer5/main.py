@@ -23,6 +23,7 @@ from .tablist import tabList
 from .createmodule import createObject, resetColumns, resetCol1, resetCol2, resetCol3
 from .drummodule import drumObject
 from .mixermodule import mixerObject, overHeadObject, mixerTypeList, roomObject, roomBObject
+from .mapmodule import mapObject
 
 class SteevenSlateDrummer(IAccessible):
     name = "Steeven Slate Drum 5"
@@ -33,6 +34,7 @@ class SteevenSlateDrummer(IAccessible):
     createObject = NavObject(createObject)
     drumObject = NavObject(drumObject, 3)
     mixerObject = NavObject(mixerObject, 0)
+    mapObject = NavObject(mapObject)
     overHeadObject = NavObject(overHeadObject)
     roomObject = NavObject(roomObject)
     roomBObject = NavObject(roomBObject)
@@ -97,6 +99,8 @@ class SteevenSlateDrummer(IAccessible):
                         ui.message(self.roomObject.getNextObject(mouse = "move_and_click")["name"])
                     elif mixerType["name"] == "Room B":
                         ui.message(self.roomBObject.getNextObject(mouse = "move_and_click")["name"])
+            elif tab["name"] == "Map":
+                ui.message(self.mapObject.getNextObject())
 
     @script(gesture="kb:leftarrow")
     def script_goToPreviousItem(self, gesture):
@@ -139,7 +143,8 @@ class SteevenSlateDrummer(IAccessible):
                         ui.message(self.roomObject.getPreviousObject(mouse = "move_and_click")["name"])
                     elif mixerType["name"] == "Room B":
                         ui.message(self.roomBObject.getPreviousObject(mouse = "move_and_click")["name"])
-
+            elif tab["name"] == "Map":
+                ui.message(self.mapObject.getPreviousObject())
     @script(gesture="kb:uparrow")
     def script_goToUpItem(self, gesture):
         """
@@ -387,7 +392,12 @@ class SteevenSlateDrummer(IAccessible):
                         self.mode = "default"
                         resetColumns()
                         ui.message("Kit preset selected")
-                    
+            elif tab["name"] == "Map":
+                if self.mapObject.getObject() == "resetMap":
+                    self.mouse.moveAndLeftClick(190, 620)
+                elif self.mapObject.getObject() == "loadMap":
+                    self.mouse.moveAndLeftClick(880, 620)
+
     @script(gesture="kb:escape")
     def script_closeFxWindow(self, gesture):
         """
