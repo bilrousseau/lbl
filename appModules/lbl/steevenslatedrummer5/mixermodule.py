@@ -304,6 +304,28 @@ snareRoomParams = {
     "routing": setRouting
 }
 
+snareRoomBParams = {
+    "name": "Snare Room B",
+    "x": 514,
+    "y": 535,
+    "stateDiagonal": [157, 315, 158, 316],
+    "volumeX": 458,
+    "volumeY": 315,
+    "volumeDiagonal": [478, 305, 528, 325],
+    "panoramicX": 548,
+    "panoramicY": 315,
+    "panoramicDiagonal": [568, 305, 618, 325],
+    "routingButtonX": 420,
+    "routingButtonY": 315,
+    "routingDiagonal": [309, 305, 444, 325],
+    "menuSize": 36,
+    "scroll": -75,
+    "volume": setVolume,
+    "panoramic": setPanoramic,
+    "state": setState,
+    "routing": setRouting
+}
+
 tom1Params = {
     "name": "Tom 1",
     "x": 437,
@@ -385,6 +407,28 @@ tom1RoomBParams = {
     "routingButtonX": 420,
     "routingButtonY": 285,
     "routingDiagonal": [309, 275, 444, 295],
+    "menuSize": 36,
+    "scroll": 75,
+    "volume": setVolume,
+    "panoramic": setPanoramic,
+    "state": setState,
+    "routing": setRouting
+}
+
+tom1SLRParams = {
+    "name": "Tom 1 SLR",
+    "x": 418,
+    "y": 494,
+    "stateDiagonal": [157, 315, 158, 316],
+    "volumeX": 458,
+    "volumeY": 315,
+    "volumeDiagonal": [478, 305, 528, 325],
+    "panoramicX": 548,
+    "panoramicY": 315,
+    "panoramicDiagonal": [568, 305, 618, 325],
+    "routingButtonX": 420,
+    "routingButtonY": 315,
+    "routingDiagonal": [309, 305, 444, 325],
     "menuSize": 36,
     "scroll": 75,
     "volume": setVolume,
@@ -481,6 +525,28 @@ tom2RoomBParams = {
     "routing": setRouting
 }
 
+tom2SLRParams = {
+    "name": "Tom 2 SLR",
+    "x": 418,
+    "y": 494,
+    "stateDiagonal": [157, 315, 158, 316],
+    "volumeX": 458,
+    "volumeY": 315,
+    "volumeDiagonal": [478, 305, 528, 325],
+    "panoramicX": 548,
+    "panoramicY": 315,
+    "panoramicDiagonal": [568, 305, 618, 325],
+    "routingButtonX": 420,
+    "routingButtonY": 315,
+    "routingDiagonal": [309, 305, 444, 325],
+    "menuSize": 36,
+    "scroll": 75,
+    "volume": setVolume,
+    "panoramic": setPanoramic,
+    "state": setState,
+    "routing": setRouting
+}
+
 tom3Params = {
     "name": "Tom 3",
     "x": 608,
@@ -561,6 +627,28 @@ tom3RoomBParams = {
     "routingButtonX": 420,
     "routingButtonY": 285,
     "routingDiagonal": [309, 275, 444, 295],
+    "menuSize": 36,
+    "scroll": 75,
+    "volume": setVolume,
+    "panoramic": setPanoramic,
+    "state": setState,
+    "routing": setRouting
+}
+
+tom3SLRParams = {
+    "name": "Tom 3 SLR",
+    "x": 418,
+    "y": 494,
+    "stateDiagonal": [157, 315, 158, 316],
+    "volumeX": 458,
+    "volumeY": 315,
+    "volumeDiagonal": [478, 305, 528, 325],
+    "panoramicX": 548,
+    "panoramicY": 315,
+    "panoramicDiagonal": [568, 305, 618, 325],
+    "routingButtonX": 420,
+    "routingButtonY": 315,
+    "routingDiagonal": [309, 305, 444, 325],
     "menuSize": 36,
     "scroll": 75,
     "volume": setVolume,
@@ -656,6 +744,29 @@ tom4RoomBParams = {
     "state": setState,
     "routing": setRouting
 }
+
+tom4SLRParams = {
+    "name": "Tom 4 SLR",
+    "x": 418,
+    "y": 494,
+    "stateDiagonal": [157, 315, 158, 316],
+    "volumeX": 458,
+    "volumeY": 315,
+    "volumeDiagonal": [478, 305, 528, 325],
+    "panoramicX": 548,
+    "panoramicY": 315,
+    "panoramicDiagonal": [568, 305, 618, 325],
+    "routingButtonX": 420,
+    "routingButtonY": 315,
+    "routingDiagonal": [309, 305, 444, 325],
+    "menuSize": 36,
+    "scroll": 75,
+    "volume": setVolume,
+    "panoramic": setPanoramic,
+    "state": setState,
+    "routing": setRouting
+}
+
 
 hihatParams = {
     "name": "Hi-Hat",
@@ -1143,6 +1254,7 @@ roomObject = [
 
 roomBObject = [
     kickRoomBParams,
+    snareRoomBParams,
     tom1RoomBParams,
     tom2RoomBParams,
     tom3RoomBParams,
@@ -1153,13 +1265,19 @@ roomBObject = [
     cymbal3RoomBParams,
     cymbal4RoomBParams,
     cymbal5RoomBParams,
-    kickSLRParams,
-]
+    ]
 
+SLRObject = [
+    kickSLRParams,
+    tom1SLRParams,
+    tom2SLRParams,
+    tom3SLRParams,
+    tom4SLRParams,
+]
 mixerTypeList = [
     {"name": "Pieces Mics", "object": mixerObject},
     {"name": "Over Heads", "object": overHeadObject},
     {"name": "Room", "object": roomObject},
     {"name": "Room B", "object": roomBObject},
-    # {"name": "SLR", "object": {}}
+    {"name": "SLR", "object": SLRObject},
 ]
