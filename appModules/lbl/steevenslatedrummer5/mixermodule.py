@@ -1275,7 +1275,7 @@ SLRObject = [
     tom4SLRParams,
 ]
 mixerTypeList = [
-    {"name": "Pieces Mics", "object": mixerObject},
+    {"name": "Pieces", "object": mixerObject},
     {"name": "Over Heads", "object": overHeadObject},
     {"name": "Room", "object": roomObject},
     {"name": "Room B", "object": roomBObject},
