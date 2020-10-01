@@ -22,7 +22,7 @@ from .zonelist import zoneList
 from .tablist import tabList
 from .createmodule import createObject, resetColumns, resetCol1, resetCol2, resetCol3
 from .drummodule import drumObject
-from .mixermodule import mixerObject, overHeadObject, mixerTypeList, roomObject, roomBObject
+from .mixermodule import mixerObject, overHeadObject, mixerTypeList, roomObject, roomBObject, SLRObject
 from .mapmodule import mapObject
 
 class SteevenSlateDrummer(IAccessible):
@@ -38,6 +38,7 @@ class SteevenSlateDrummer(IAccessible):
     overHeadObject = NavObject(overHeadObject)
     roomObject = NavObject(roomObject)
     roomBObject = NavObject(roomBObject)
+    SLRObject = NavObject(SLRObject)
     mixerTypeList = NavObject(mixerTypeList)
 
     mode = "default"
