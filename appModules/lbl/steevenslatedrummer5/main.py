@@ -393,10 +393,18 @@ class SteevenSlateDrummer(IAccessible):
                         resetColumns()
                         ui.message("Kit preset selected")
             elif tab["name"] == "Map":
-                if self.mapObject.getObject() == "resetMap":
-                    self.mouse.moveAndLeftClick(190, 620)
-                elif self.mapObject.getObject() == "loadMap":
-                    self.mouse.moveAndLeftClick(880, 620)
+                if self.mode == "default":
+                    if self.mapObject.getObject() == "resetMap":
+                        self.mouse.moveAndLeftClick(190, 620)
+                    elif self.mapObject.getObject() == "loadMap":
+                        self.mouse.moveAndLeftClick(880, 620)
+                        self.mode = "load map"
+                elif self.mode == "load map":
+                    tones.beep(440, 15)
+                    keyboardHandler.KeyboardInputGesture.fromName("enter").send()
+                    ui.message("Map selected")
+                    self.mode = "default"
+
 
     @script(gesture="kb:escape")
     def script_closeFxWindow(self, gesture):
@@ -429,15 +437,6 @@ class SteevenSlateDrummer(IAccessible):
             ui.message("Kit selection canceled")
             self.mode = "default"
 
-    @script(gesture="kb:h")
-    def script_getHelp(self, gesture):
-        zone = self.zone.getObject()
-
-        if zone == "Tabs":
-            ui.message("Vous êtes dans la zone contenant la liste des onglets.")
-        elif zone == "Content":
-            ui.message("Vous êtes dans la zone de contenu")
-
     @script(gesture="kb:applications")
     def script_applicationMenu(self, gesture):
         tab = self.tab.getObject()
@@ -466,6 +465,6 @@ class SteevenSlateDrummer(IAccessible):
                         ui.message(roomB["routing"]("enter", roomB["routingButtonX"], roomB["routingButtonY"], roomB["routingDiagonal"], roomB["menuSize"], roomB["scroll"]))
 
     @script(gesture="kb:NVDA+d")
-    def script_testOCRCreate(self, gesture):
-        pass
+    def script_debug(self, gesture):
+        ui.message(self.mode)
 

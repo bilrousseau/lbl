@@ -126,5 +126,4 @@ instrumentsParams = {
 # Liste des dictionnaires correspondant aux parties de l'onget Create
 createObject = [
     kitsParams,
-    instrumentsParams,
 ]
