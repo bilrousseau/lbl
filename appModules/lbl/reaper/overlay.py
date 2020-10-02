@@ -1,6 +1,5 @@
 import keyboardHandler
 import api
-import tones
 import ui
 import config
 

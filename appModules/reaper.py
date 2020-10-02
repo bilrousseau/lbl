@@ -1,6 +1,5 @@
 import appModuleHandler
 import ui
-import tones
 import api
 from scriptHandler import script
 
@@ -15,8 +14,6 @@ from .sibiac.gtune import GTune
 from .sibiac.sforzando import Sforzando
 
 class AppModule(appModuleHandler.AppModule):
-    tones.beep(440, 150)
-
     @script(gesture="kb:NVDA+a")
     def script_searchSelectedFX(self, gesture):
         ui.message(base.getSelectedFXName())

@@ -1,5 +1,4 @@
 import ui
-import tones
 from .mouse import Mouse
 
 # Classe regroupant les fonctions permettant le déplacement dans une arboressence LBL

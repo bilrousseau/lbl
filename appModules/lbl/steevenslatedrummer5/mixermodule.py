@@ -1,5 +1,4 @@
 import time
-import tones
 import ui
 from ..api.mouse import Mouse
 from ..api.navobject import NavObject

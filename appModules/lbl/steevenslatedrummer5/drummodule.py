@@ -1,4 +1,3 @@
-import tones
 from ..api.mouse import Mouse
 from ..api.ocr import LBLOCR
 import time

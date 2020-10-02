@@ -3,7 +3,6 @@ import winUser
 import time
 
 # Import des modules NVDA
-import tones
 import ui
 import api
 import keyboardHandler
@@ -355,17 +354,6 @@ class SteevenSlateDrummer(IAccessible):
                 elif mixerType["name"] == "SLR":
                     SLR["panoramic"]("right", SLR["panoramicX"], SLR["panoramicY"], SLR["x"], SLR["y"], SLR["scroll"])
 
-    @script(gesture="kb:m")
-    def script_changeState(self, gesture):
-        zone = self.zone.getObject()
-        tab = self.tab.getObject()
-        obj = self.mixerObject.getObject()
-
-        if zone == "Content":
-            if tab["name"] == "Mixer":
-                tones.beep(440, 40)
-                obj["state"](obj["stateDiagonal"])
-
     @script(gesture="kb:enter")
     def script_getTab(self, gesture):
         """
@@ -430,7 +418,6 @@ class SteevenSlateDrummer(IAccessible):
                         self.mouse.moveAndLeftClick(880, 620)
                         self.mode = "load map"
                 elif self.mode == "load map":
-                    tones.beep(440, 15)
                     keyboardHandler.KeyboardInputGesture.fromName("enter").send()
                     ui.message("Map selected")
                     self.mode = "default"

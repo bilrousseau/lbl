@@ -1,5 +1,4 @@
 import ui
-import tones
 from .mouse import Mouse
 from .ocr import LBLOCR
 

@@ -1,4 +1,3 @@
-import tones
 import ui
 import os
 import sys

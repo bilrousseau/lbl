@@ -1,5 +1,4 @@
 # Import des modules NVDA
-import tones
 import ui
 import api
 import keyboardHandler

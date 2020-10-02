@@ -1,6 +1,5 @@
 import os
 import ui
-import tones
 import time
 
 from ..api.ocr import LBLOCR
