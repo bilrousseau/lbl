@@ -306,8 +306,8 @@ snareRoomParams = {
 
 snareRoomBParams = {
     "name": "Snare Room B",
-    "x": 514,
-    "y": 535,
+    "x": 418,
+    "y": 494,
     "stateDiagonal": [157, 315, 158, 316],
     "volumeX": 458,
     "volumeY": 315,
@@ -417,8 +417,8 @@ tom1RoomBParams = {
 
 tom1SLRParams = {
     "name": "Tom 1 SLR",
-    "x": 418,
-    "y": 494,
+    "x": 437,
+    "y": 433,
     "stateDiagonal": [157, 315, 158, 316],
     "volumeX": 458,
     "volumeY": 315,
@@ -527,8 +527,8 @@ tom2RoomBParams = {
 
 tom2SLRParams = {
     "name": "Tom 2 SLR",
-    "x": 418,
-    "y": 494,
+    "x": 498,
+    "y": 423,
     "stateDiagonal": [157, 315, 158, 316],
     "volumeX": 458,
     "volumeY": 315,
@@ -637,8 +637,8 @@ tom3RoomBParams = {
 
 tom3SLRParams = {
     "name": "Tom 3 SLR",
-    "x": 418,
-    "y": 494,
+    "x": 608,
+    "y": 491,
     "stateDiagonal": [157, 315, 158, 316],
     "volumeX": 458,
     "volumeY": 315,
@@ -747,8 +747,8 @@ tom4RoomBParams = {
 
 tom4SLRParams = {
     "name": "Tom 4 SLR",
-    "x": 418,
-    "y": 494,
+    "x": 658,
+    "y": 538,
     "stateDiagonal": [157, 315, 158, 316],
     "volumeX": 458,
     "volumeY": 315,
