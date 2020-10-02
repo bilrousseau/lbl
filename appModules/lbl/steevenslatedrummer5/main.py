@@ -92,7 +92,7 @@ class SteevenSlateDrummer(IAccessible):
                     ui.message(self.drumObject.getSubObject()[1]("right", self.drumObject.getObject()["x"], self.drumObject.getObject()["y"]))
             elif tab["name"] == "Mixer":
                 if self.mode == "default":
-                    if mixerType["name"] == "Pieces Mics":
+                    if mixerType["name"] == "Pieces":
                         ui.message(self.mixerObject.getNextObject(mouse = "move_and_click")["name"])
                     elif mixerType["name"] == "Over Heads":
                         ui.message(self.overHeadObject.getNextObject(mouse = "move_and_click")["name"])
@@ -100,6 +100,8 @@ class SteevenSlateDrummer(IAccessible):
                         ui.message(self.roomObject.getNextObject(mouse = "move_and_click")["name"])
                     elif mixerType["name"] == "Room B":
                         ui.message(self.roomBObject.getNextObject(mouse = "move_and_click")["name"])
+                    elif mixerType["name"] == "SLR":
+                        ui.message(self.SLRObject.getNextObject(mouse = "move_and_click")["name"])
             elif tab["name"] == "Map":
                 ui.message(self.mapObject.getNextObject())
 
@@ -136,7 +138,7 @@ class SteevenSlateDrummer(IAccessible):
                     ui.message(self.drumObject.getSubObject()[1]("left", self.drumObject.getObject()["x"], self.drumObject.getObject()["y"]))
             elif tab["name"] == "Mixer":
                 if self.mode == "default":
-                    if mixerType["name"] == "Pieces Mics":
+                    if mixerType["name"] == "Pieces":
                         ui.message(self.mixerObject.getPreviousObject(mouse = "move_and_click")["name"])
                     elif mixerType["name"] == "Over Heads":
                         ui.message(self.overHeadObject.getPreviousObject(mouse = "move_and_click")["name"])
@@ -144,6 +146,8 @@ class SteevenSlateDrummer(IAccessible):
                         ui.message(self.roomObject.getPreviousObject(mouse = "move_and_click")["name"])
                     elif mixerType["name"] == "Room B":
                         ui.message(self.roomBObject.getPreviousObject(mouse = "move_and_click")["name"])
+                    elif mixerType["name"] == "SLR":
+                        ui.message(self.SLRObject.getPreviousObject(mouse = "move_and_click")["name"])
             elif tab["name"] == "Map":
                 ui.message(self.mapObject.getPreviousObject())
     @script(gesture="kb:uparrow")
@@ -160,6 +164,7 @@ class SteevenSlateDrummer(IAccessible):
         overheads = self.overHeadObject.getObject()
         room = self.roomObject.getObject()
         roomB = self.roomBObject.getObject()
+        SLR = self.SLRObject.getObject()
         
         if zone == "Content":
             if tab["name"] == "Drum":
@@ -172,12 +177,14 @@ class SteevenSlateDrummer(IAccessible):
                         ui.message(self.mixerObject.getObject(mouse = "move_and_click")["name"])
                     elif mixerType["name"] == "Room":
                         ui.message(self.overHeadObject.getObject(mouse = "move_and_click")["name"])
-                    elif mixerType["name"] == "Pieces Mics":
-                        ui.message(self.roomBObject.getObject(mouse = "move_and_click")["name"])
+                    elif mixerType["name"] == "Pieces":
+                        ui.message(self.SLRObject.getObject(mouse = "move_and_click")["name"])
                     elif mixerType["name"] == "Room B":
                         ui.message(self.roomObject.getObject(mouse = "move_and_click")["name"])
+                    elif mixerType["name"] == "SLR":
+                        ui.message(self.roomBObject.getObject(mouse = "move_and_click")["name"])
                 if self.mode == "menu":
-                    if mixerType["name"] == "Pieces Mics":
+                    if mixerType["name"] == "Pieces":
                         ui.message(piecesMics["routing"]("up", menuSize = piecesMics["menuSize"]))
                     elif mixerType["name"] == "Over Heads":
                         ui.message(overheads["routing"]("up", menuSize = overheads["menuSize"]))
@@ -185,6 +192,8 @@ class SteevenSlateDrummer(IAccessible):
                         ui.message(room["routing"]("up", menuSize = room["menuSize"]))
                     elif mixerType["name"] == "Room B":
                         ui.message(roomB["routing"]("up", menuSize = roomB["menuSize"]))
+                    elif mixerType["name"] == "SLR":
+                        ui.message(SLR["routing"]("up", menuSize = SLR["menuSize"]))
                     keyboardHandler.KeyboardInputGesture.fromName("uparrow").send()
             elif tab["name"] == "Create" and self.mode != "default":
                 if self.mode == "library select":
@@ -208,6 +217,7 @@ class SteevenSlateDrummer(IAccessible):
         overheads = self.overHeadObject.getObject()
         room = self.roomObject.getObject()
         roomB = self.roomBObject.getObject()
+        SLR = self.SLRObject.getObject()
 
         if zone == "Content":
             if tab["name"] == "Drum":
@@ -221,14 +231,16 @@ class SteevenSlateDrummer(IAccessible):
                     ui.message(self.mixerTypeList.getNextObject()["name"])
                     if mixerType["name"] == "Room":
                         ui.message(self.roomBObject.getObject(mouse = "move_and_click")["name"])
-                    elif mixerType["name"] == "Pieces Mics":
+                    elif mixerType["name"] == "Pieces":
                         ui.message(self.overHeadObject.getObject(mouse = "move_and_click")["name"])
                     elif mixerType["name"] == "Over Heads":
                         ui.message(self.roomObject.getObject(mouse = "move_and_click")["name"])
                     elif mixerType["name"] == "Room B":
+                        ui.message(self.SLRObject.getObject(mouse = "move_and_click")["name"])
+                    elif mixerType["name"] == "SLR":
                         ui.message(self.mixerObject.getObject(mouse = "move_and_click")["name"])
                 if self.mode == "menu":
-                    if mixerType["name"] == "Pieces Mics":
+                    if mixerType["name"] == "Pieces":
                         ui.message(piecesMics["routing"]("down", menuSize = piecesMics["menuSize"]))
                     elif mixerType["name"] == "Over Heads":
                         ui.message(overheads["routing"]("down", menuSize = overheads["menuSize"]))
@@ -236,6 +248,8 @@ class SteevenSlateDrummer(IAccessible):
                         ui.message(room["routing"]("down", menuSize = room["menuSize"]))
                     elif mixerType["name"] == "Room B":
                         ui.message(roomB["routing"]("down", menuSize = room["menuSize"]))
+                    elif mixerType["name"] == "SLR":
+                        ui.message(roomB["routing"]("down", menuSize = SLR["menuSize"]))
                     keyboardHandler.KeyboardInputGesture.fromName("downarrow").send()
             elif tab["name"] == "Create" and self.mode != "default":
                 if self.mode == "library select":
@@ -254,10 +268,11 @@ class SteevenSlateDrummer(IAccessible):
         overheads = self.overHeadObject.getObject()
         room = self.roomObject.getObject()
         roomB = self.roomBObject.getObject()
+        SLR = self.SLRObject.getObject()
 
         if zone == "Content":
             if tab["name"] == "Mixer":
-                if mixerType["name"] == "Pieces Mics":
+                if mixerType["name"] == "Pieces":
                     piecesMics["volume"]("up", piecesMics["volumeX"], piecesMics["volumeY"], piecesMics["x"], piecesMics["y"], piecesMics["scroll"])
                 elif mixerType["name"] == "Over Heads":
                     overheads["volume"]("up", overheads["volumeX"], overheads["volumeY"], overheads["x"], overheads["y"], overheads["scroll"])
@@ -265,6 +280,8 @@ class SteevenSlateDrummer(IAccessible):
                     room["volume"]("up", room["volumeX"], room["volumeY"], room["x"], room["y"], room["scroll"])
                 elif mixerType["name"] == "Room B":
                     roomB["volume"]("up", roomB["volumeX"], roomB["volumeY"], roomB["x"], roomB["y"], roomB["scroll"])
+                elif mixerType["name"] == "SLR":
+                    SLR["volume"]("up", SLR["volumeX"], SLR["volumeY"], SLR["x"], SLR["y"], SLR["scroll"])
             
     @script(gesture="kb:shift+downarrow")
     def script_volumeDown(self, gesture):
@@ -275,10 +292,11 @@ class SteevenSlateDrummer(IAccessible):
         overheads = self.overHeadObject.getObject()
         room = self.roomObject.getObject()
         roomB = self.roomBObject.getObject()
-        
+        SLR = self.SLRObject.getObject()
+
         if zone == "Content":
             if tab["name"] == "Mixer":
-                if mixerType["name"] == "Pieces Mics":
+                if mixerType["name"] == "Pieces":
                     piecesMics["volume"]("down", piecesMics["volumeX"], piecesMics["volumeY"], piecesMics["x"], piecesMics["y"], piecesMics["scroll"])
                 elif mixerType["name"] == "Over Heads":
                     overheads["volume"]("down", overheads["volumeX"], overheads["volumeY"], overheads["x"], overheads["y"], overheads["scroll"])
@@ -286,6 +304,8 @@ class SteevenSlateDrummer(IAccessible):
                     room["volume"]("down", room["volumeX"], room["volumeY"], room["x"], room["y"], room["scroll"])
                 elif mixerType["name"] == "Room B":
                     roomB["volume"]("down", roomB["volumeX"], roomB["volumeY"], roomB["x"], roomB["y"], roomB["scroll"])
+                elif mixerType["name"] == "SLR":
+                    SLR["volume"]("down", SLR["volumeX"], SLR["volumeY"], SLR["x"], SLR["y"], SLR["scroll"])
 
     @script(gesture="kb:shift+leftarrow")
     def script_panoramicLeft(self, gesture):
@@ -296,10 +316,11 @@ class SteevenSlateDrummer(IAccessible):
         overheads = self.overHeadObject.getObject()
         room = self.roomObject.getObject()
         roomB = self.roomBObject.getObject()
+        SLR = self.SLRObject.getObject()
 
         if zone == "Content":
             if tab["name"] == "Mixer":
-                if mixerType["name"] == "Pieces Mics":
+                if mixerType["name"] == "Pieces":
                     piecesMics["panoramic"]("left", piecesMics["panoramicX"], piecesMics["panoramicY"], piecesMics["x"], piecesMics["y"], piecesMics["scroll"])
                 elif mixerType["name"] == "Over Heads":
                     overheads["panoramic"]("left", overheads["panoramicX"], overheads["panoramicY"], overheads["x"], overheads["y"], overheads["scroll"])
@@ -307,6 +328,8 @@ class SteevenSlateDrummer(IAccessible):
                     room["panoramic"]("left", room["panoramicX"], room["panoramicY"], room["x"], room["y"], room["scroll"])
                 elif mixerType["name"] == "Room B":
                     roomB["panoramic"]("left", roomB["panoramicX"], roomB["panoramicY"], roomB["x"], roomB["y"], roomB["scroll"])
+                elif mixerType["name"] == "SLR":
+                    SLR["panoramic"]("left", SLR["panoramicX"], SLR["panoramicY"], SLR["x"], SLR["y"], SLR["scroll"])
 
     @script(gesture="kb:shift+rightarrow")
     def script_panoramicRight(self, gesture):
@@ -317,10 +340,11 @@ class SteevenSlateDrummer(IAccessible):
         overheads = self.overHeadObject.getObject()
         room = self.roomObject.getObject()
         roomB = self.roomBObject.getObject()
+        SLR = self.SLRObject.getObject()
 
         if zone == "Content":
             if tab["name"] == "Mixer":
-                if mixerType["name"] == "Pieces Mics":
+                if mixerType["name"] == "Pieces":
                     piecesMics["panoramic"]("right", piecesMics["panoramicX"], piecesMics["panoramicY"], piecesMics["x"], piecesMics["y"], piecesMics["scroll"])
                 elif mixerType["name"] == "Over Heads":
                     overheads["panoramic"]("right", overheads["panoramicX"], overheads["panoramicY"], overheads["x"], overheads["y"], overheads["scroll"])
@@ -328,6 +352,8 @@ class SteevenSlateDrummer(IAccessible):
                     room["panoramic"]("right", room["panoramicX"], room["panoramicY"], room["x"], room["y"], room["scroll"])
                 elif mixerType["name"] == "Room B":
                     roomB["panoramic"]("right", roomB["panoramicX"], roomB["panoramicY"], roomB["x"], roomB["y"], roomB["scroll"])
+                elif mixerType["name"] == "SLR":
+                    SLR["panoramic"]("right", SLR["panoramicX"], SLR["panoramicY"], SLR["x"], SLR["y"], SLR["scroll"])
 
     @script(gesture="kb:m")
     def script_changeState(self, gesture):
@@ -353,7 +379,8 @@ class SteevenSlateDrummer(IAccessible):
         overheads = self.overHeadObject
         room = self.roomObject
         roomB = self.roomBObject
-        
+        SLR = self.SLRObject
+
         if zone == "Content":
             if tab["name"] == "Drum":
                 if self.mode == "default":
@@ -363,7 +390,7 @@ class SteevenSlateDrummer(IAccessible):
                     self.mode = "default"
             elif tab["name"] == "Mixer":
                 if self.mode == "default":
-                    if mixerType["name"] == "Pieces Mics":
+                    if mixerType["name"] == "Pieces":
                         piecesMics.getObject(mouse = "move_and_click")["name"]
                     elif mixerType["name"] == "Over Heads":
                         overheads.getObject(mouse = "move_and_click")["name"]
@@ -371,6 +398,8 @@ class SteevenSlateDrummer(IAccessible):
                         room.getObject(mouse = "move_and_click")["name"]
                     elif mixerType["name"] == "Room B":
                         roomB.getObject(mouse = "move_and_click")["name"]
+                    elif mixerType["name"] == "SLR":
+                        SLR.getObject(mouse = "move_and_click")["name"]
                 elif self.mode == "menu":
                     ui.message("Routing saved")
                     keyboardHandler.KeyboardInputGesture.fromName("enter").send()
@@ -423,6 +452,7 @@ class SteevenSlateDrummer(IAccessible):
             self.overHeadObject.resetObject()
             self.roomObject.resetObject()
             self.mixerObject.resetObject()
+            self.SLRObject.resetObject()
             config.conf["mouse"]["enableMouseTracking"] = True
             keyboardHandler.KeyboardInputGesture.fromName("escape").send()
         elif self.mode == "piece_settings":
@@ -447,6 +477,7 @@ class SteevenSlateDrummer(IAccessible):
         overheads = self.overHeadObject.getObject()
         room = self.roomObject.getObject()
         roomB = self.roomBObject.getObject()
+        SLR = self.SLRObject.getObject()
 
         if zone == "Content":
             if tab["name"] == "Drum":
@@ -456,7 +487,7 @@ class SteevenSlateDrummer(IAccessible):
             elif tab["name"] == "Mixer":
                 if self.mode == "default":
                     self.mode = "menu"
-                    if mixerType["name"] == "Pieces Mics":
+                    if mixerType["name"] == "Pieces":
                         ui.message(piecesMics["routing"]("enter", piecesMics["routingButtonX"], piecesMics["routingButtonY"], piecesMics["routingDiagonal"], piecesMics["menuSize"], piecesMics["scroll"]))
                     elif mixerType["name"] == "Over Heads":
                         ui.message(overheads["routing"]("enter", overheads["routingButtonX"], overheads["routingButtonY"], overheads["routingDiagonal"], overheads["menuSize"], overheads["scroll"]))
@@ -464,6 +495,8 @@ class SteevenSlateDrummer(IAccessible):
                         ui.message(room["routing"]("enter", room["routingButtonX"], room["routingButtonY"], room["routingDiagonal"], room["menuSize"], room["scroll"]))
                     elif mixerType["name"] == "Room B":
                         ui.message(roomB["routing"]("enter", roomB["routingButtonX"], roomB["routingButtonY"], roomB["routingDiagonal"], roomB["menuSize"], roomB["scroll"]))
+                    elif mixerType["name"] == "SLR":
+                        ui.message(SLR["routing"]("enter", SLR["routingButtonX"], SLR["routingButtonY"], SLR["routingDiagonal"], SLR["menuSize"], SLR["scroll"]))
 
     @script(gesture="kb:NVDA+d")
     def script_debug(self, gesture):
