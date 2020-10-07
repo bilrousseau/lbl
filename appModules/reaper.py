@@ -12,6 +12,7 @@ from .lbl.dsksaxophones.main import DSKSaxophones
 from .sibiac.ezdrummer import EZDrummer
 from .sibiac.gtune import GTune
 from .sibiac.sforzando import Sforzando
+from .sibiac.ni import GuitarRig5
 
 class AppModule(appModuleHandler.AppModule):
     @script(gesture="kb:NVDA+a")
@@ -39,5 +40,12 @@ class AppModule(appModuleHandler.AppModule):
             clsList.insert(0, GTune)
         elif obj.windowClassName.startswith("Plugin") and base.getSelectedFXName().startswith("VST3i: sforzando"):
             clsList.insert(0, Sforzando)
+        elif obj.windowClassName.startswith('NIVSTChildWindow00007FFC60070000') and base.getSelectedFXName().startswith("VST: Guitar Rig"):
+            clsList.insert(0, GuitarRig5)
+
+
+
+
+
 
 
