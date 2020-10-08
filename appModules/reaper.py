@@ -65,3 +65,7 @@ class AppModule(appModuleHandler.AppModule):
             clsList.insert(0, Zampler)
         elif obj.windowClassName.startswith('JUCE') and base.getSelectedFXName().startswith("VSTi: VSCO2"):
             clsList.insert(0, VSCO2)
+        elif obj.windowClassName.startswith('JUCE') and base.getSelectedFXName().startswith("VSTi: Addictive Drums"):
+            clsList.insert(0, AD2)
+        elif obj.windowClassName.startswith('JUCE') and base.getSelectedFXName().startswith("VSTi: Addictive Keys"):
+            clsList.insert(0, AK)
