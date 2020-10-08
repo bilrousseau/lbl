@@ -22,7 +22,6 @@ import controlTypes
 import winUser
 import api
 import ctypes
-
 from . import sibiac
 from .sibiac import MoveFocusTo, SIBI, SIBINVDA, XY, Box, TextBox, TextOutBox, ScrollV, Color2Tuple, ColorMatcherObj, ColorMatcher, FindInXRight, FindInYDown, FindRow, FindVRange, FindHRange, chooseKnownOverlay, MouseSlowLeftClick, MouseScroll, FindNearestColor, Control, VList, YRange, YBar, Container, Label, ScrollLabel, PopupLabel, PushBtn, SwitchBtn, FixedTab, FixedTabControl, Combo, Dialog, OpenBtn, PopupMenuButton, Clickable, OptionTable, Pt, FIXED, MOVE, PROPORTIONAL, gSIBI
 from .sibiac import SpinLabel
@@ -32,6 +31,7 @@ from .sibiac.sforzando import Sforzando
 from .sibiac.ni import GuitarRig5
 from .sibiac.xln import AD2, AK
 from .sibiac.zampler import Zampler
+from .sibiac.vsco2 import VSCO2
 
 class AppModule(appModuleHandler.AppModule):
     @script(gesture="kb:NVDA+a")
@@ -61,13 +61,7 @@ class AppModule(appModuleHandler.AppModule):
             clsList.insert(0, Sforzando)
         elif obj.windowClassName.startswith('NIVSTChildWindow') and base.getSelectedFXName().startswith("VST: Guitar Rig"):
             clsList.insert(0, GuitarRig5)
-        elif obj.windowClassName.startswith('Plugin00007FFC65EF0000') and base.getSelectedFXName().startswith("VSTi: Zampler"):
+        elif obj.windowClassName.startswith('Plugin') and base.getSelectedFXName().startswith("VSTi: Zampler"):
             clsList.insert(0, Zampler)
-        
-
-
-
-
-
-
-
+        elif obj.windowClassName.startswith('JUCE') and base.getSelectedFXName().startswith("VSTi: VSCO2"):
+            clsList.insert(0, VSCO2)

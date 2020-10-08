@@ -60,4 +60,6 @@ def getSmartName():
         return "Guitar Rig"
     elif fxName.startswith("VSTi: Zampler"):
         return "Zampler"
+    elif fxName.startswith("VSTi: VSCO2"):
+        return "VSCO2"
     return
