@@ -64,6 +64,6 @@ def getSmartName():
         return "VSCO2"
     elif fxName.startswith("VSTi: Addictive Drums"):
         return "Addictive Drums"
-    elif fxName.startswith("VSTi: Addictive Keys):
+    elif fxName.startswith("VSTi: Addictive Keys"):
         return "Addictive Keys"
     return
