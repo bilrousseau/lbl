@@ -1142,7 +1142,7 @@ cymbal4RoomBParams = {
 }
 
 cymbal5Params = {
-    "name": "China Over Head",
+    "name": "Shina Over Head",
     "x": 717,
     "y": 457,
     "stateDiagonal": [157, 195, 158, 196],
@@ -1164,7 +1164,7 @@ cymbal5Params = {
 }
 
 cymbal5RoomParams = {
-    "name": "China Room",
+    "name": "Shina Room",
     "x": 717,
     "y": 457,
     "stateDiagonal": [],
@@ -1186,7 +1186,7 @@ cymbal5RoomParams = {
 }
 
 cymbal5RoomBParams = {
-    "name": "China Room B",
+    "name": "Shina Room B",
     "x": 717,
     "y": 457,
     "stateDiagonal": [157, 255, 158, 256],
