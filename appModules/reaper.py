@@ -49,23 +49,23 @@ class AppModule(appModuleHandler.AppModule):
     def chooseNVDAObjectOverlayClasses(self, obj, clsList):
         if obj.windowControlID == 1426:
             clsList.insert(0, LBLCheckBox)
-        elif obj.windowClassName.startswith("JUCE") and base.getSelectedFXName().startswith("VSTi: SSDSampler"):
+        elif obj.windowClassName.startswith("JUCE") and "SSDSampler" in base.getSelectedFXName():
             clsList.insert(0, SteevenSlateDrummer)
-        elif obj.windowClassName.startswith("JUCE") and base.getSelectedFXName().startswith("VSTi: DSK Saxophones"):
+        elif obj.windowClassName.startswith("JUCE") and "DSK Saxophones" in base.getSelectedFXName():
             clsList.insert(0, DSKSaxophones)
-        elif obj.windowClassName.startswith("Plugin") and base.getSelectedFXName().startswith("VSTi: EZdrummer"):
+        elif obj.windowClassName.startswith("Plugin") and "EZdrummer" in base.getSelectedFXName():
             clsList.insert(0, EZDrummer)
-        elif obj.windowClassName.startswith("GWin") and base.getSelectedFXName().startswith("VST: GTune"):
+        elif obj.windowClassName.startswith("GWin") and "GTune" in base.getSelectedFXName():
             clsList.insert(0, GTune)
-        elif obj.windowClassName.startswith("Plugin") and base.getSelectedFXName().startswith("VST3i: sforzando"):
+        elif obj.windowClassName.startswith("Plugin") and "sforzando" in base.getSelectedFXName():
             clsList.insert(0, Sforzando)
-        elif obj.windowClassName.startswith('NIVSTChildWindow') and base.getSelectedFXName().startswith("VST: Guitar Rig"):
+        elif obj.windowClassName.startswith('NIVSTChildWindow') and "Guitar Rig" in base.getSelectedFXName():
             clsList.insert(0, GuitarRig5)
-        elif obj.windowClassName.startswith('Plugin') and base.getSelectedFXName().startswith("VSTi: Zampler"):
+        elif obj.windowClassName.startswith('Plugin') and "Zampler" in base.getSelectedFXName():
             clsList.insert(0, Zampler)
-        elif obj.windowClassName.startswith('JUCE') and base.getSelectedFXName().startswith("VSTi: VSCO2"):
+        elif obj.windowClassName.startswith('JUCE') and "VSCO2" in base.getSelectedFXName():
             clsList.insert(0, VSCO2)
-        elif obj.windowClassName.startswith('JUCE') and base.getSelectedFXName().startswith("VSTi: Addictive Drums"):
+        elif obj.windowClassName.startswith('JUCE') and "Addictive Drums" in base.getSelectedFXName():
             clsList.insert(0, AD2)
-        elif obj.windowClassName.startswith('JUCE') and base.getSelectedFXName().startswith("VSTi: Addictive Keys"):
+        elif obj.windowClassName.startswith('JUCE') and "Addictive Keys" in base.getSelectedFXName():
             clsList.insert(0, AK)

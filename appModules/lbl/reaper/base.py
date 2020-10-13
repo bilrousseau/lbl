@@ -46,24 +46,24 @@ def getSmartName():
     window = api.getForegroundObject()
     fxName = getSelectedFXName()
 
-    if fxName.startswith("VSTi: SSDSampler5"):
+    if "SSDSampler" in fxName:
         return "Steeven Slate Drum 5"
-    elif fxName.startswith("VSTi: DSK Saxophones"):
+    elif "DSK Saxophones" in fxName:
         return "DSK Saxophones"
-    elif fxName.startswith("VSTi: EZdrummer"):
-        return "IZI Drummer"
-    elif fxName.startswith("VST: GTune"):
+    elif "EZdrummer" in fxName:
+        return "EZ Drummer"
+    elif "GTune" in fxName:
         return "GTune"
-    elif fxName.startswith("VST3i: sforzando"):
+    elif "sforzando" in fxName:
         return "Sforzando"
-    elif fxName.startswith("VST: Guitar Rig"):
+    elif "Guitar Rig" in fxName:
         return "Guitar Rig"
-    elif fxName.startswith("VSTi: Zampler"):
+    elif "Zampler" in fxName:
         return "Zampler"
-    elif fxName.startswith("VSTi: VSCO2"):
+    elif "VSCO2" in fxName:
         return "VSCO2"
-    elif fxName.startswith("VSTi: Addictive Drums"):
+    elif "Addictive Drums" in fxName:
         return "Addictive Drums"
-    elif fxName.startswith("VSTi: Addictive Keys"):
+    elif "Addictive Keys" in fxName:
         return "Addictive Keys"
     return
