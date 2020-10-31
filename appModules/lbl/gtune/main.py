@@ -28,7 +28,6 @@ class GTune(IAccessible):
     mouse = Mouse()
     mode = "off"
     i = 0
-    sys.setrecursionlimit(10000)
 
     @script(gesture="kb:leftarrow")
     def script_previousItem(self, gesture):
@@ -38,13 +37,22 @@ class GTune(IAccessible):
 
         ui.message(self.itemlist.getPreviousObject()["name"])
 
+        if self.itemlist.getObject()['name'] == 'Reference':
+            ui.message(LBLOCR.getText([230, 35, 280, 50]))
+        elif self.itemlist.getObject()['name'] == 'Tune':
+            ui.message(LBLOCR.getText([160, 210, 280, 250]))
+
     @script(gesture="kb:rightarrow")
     def script_nextItem(self, gesture):
         """
             Aller à l'objet suivant de l'interface
         """
-
         ui.message(self.itemlist.getNextObject()["name"])
+
+        if self.itemlist.getObject()['name'] == 'Reference':
+            ui.message(LBLOCR.getText([230, 35, 280, 50]))
+        elif self.itemlist.getObject()['name'] == 'Tune':
+            ui.message(LBLOCR.getText([160, 210, 280, 250]))
 
     @script(gesture="kb:enter")
     def script_openEditZone(self, gesture):
@@ -52,7 +60,7 @@ class GTune(IAccessible):
             Ouvertu're de la zone d'édition de changement de la fréquence de référence
         """
         
-        self.mouse.moveAndLeftClick(442, 87)
+        self.mouse.moveAndLeftClick(240, 40)
 
     @script(gesture="kb:NVDA+d")
     def script_debug(self, gesture):
@@ -60,25 +68,7 @@ class GTune(IAccessible):
             Fonction générique de debug
         """
 
-        ui.message(str(sys.getrecursionlimit()))
-
-        # ui.message(LBLOCR.getText([440, 85, 485, 100]))
-
-        if self.mode == "off":
-            self.mode = "on"
-            ui.message(self.mode)
-            self.toggleListening()
-            ui.message(str(self.i))
-            self.i = 0
-        elif self.mode == "on":
-            self.mode = "off"
-            ui.message("Off")
-
-    def toggleListening(self):
-        self.i += 1
-
-        if self.i < 10000:
-            return self.toggleListening()
+        ui.message(LBLOCR.getText([230, 35, 280, 50]))
 
 
     
