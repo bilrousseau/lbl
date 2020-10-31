@@ -7,6 +7,7 @@ from .lbl.reaper import base, label
 from .lbl.reaper.overlay import LBLCheckBox
 from .lbl.steevenslatedrummer5.main import SteevenSlateDrummer
 from .lbl.dsksaxophones.main import DSKSaxophones
+from .lbl.gtune.main import GTune
 
 # Import des modules Sibiac
 from NVDAObjects.window import Window
@@ -26,7 +27,6 @@ from . import sibiac
 from .sibiac import MoveFocusTo, SIBI, SIBINVDA, XY, Box, TextBox, TextOutBox, ScrollV, Color2Tuple, ColorMatcherObj, ColorMatcher, FindInXRight, FindInYDown, FindRow, FindVRange, FindHRange, chooseKnownOverlay, MouseSlowLeftClick, MouseScroll, FindNearestColor, Control, VList, YRange, YBar, Container, Label, ScrollLabel, PopupLabel, PushBtn, SwitchBtn, FixedTab, FixedTabControl, Combo, Dialog, OpenBtn, PopupMenuButton, Clickable, OptionTable, Pt, FIXED, MOVE, PROPORTIONAL, gSIBI
 from .sibiac import SpinLabel
 from .sibiac.ezdrummer import EZDrummer
-from .sibiac.gtune import GTune
 from .sibiac.sforzando import Sforzando
 from .sibiac.ni import GuitarRig5
 from .sibiac.xln import AD2, AK
