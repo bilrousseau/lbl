@@ -7,7 +7,7 @@ from .lbl.reaper import base, label
 from .lbl.reaper.overlay import LBLCheckBox
 from .lbl.steevenslatedrummer5.main import SteevenSlateDrummer
 from .lbl.dsksaxophones.main import DSKSaxophones
-from .lbl.gtune.main import GTune
+from .lbl.gtune.gtune import GTune
 
 # Import des modules Sibiac
 from NVDAObjects.window import Window
